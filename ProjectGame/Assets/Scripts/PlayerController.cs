@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         rigidbody2D.MovePosition(position);
     }
 
-    void Health()
+    void ChangeHealth(int amount)
     {
         //Makes sure that health value stays with 0 and max health.
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
