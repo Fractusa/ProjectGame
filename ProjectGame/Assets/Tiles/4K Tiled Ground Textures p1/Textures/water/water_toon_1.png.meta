@@ -1,9 +1,16 @@
 fileFormatVersion: 2
 guid: 0c638cd56b048489884233af448d7f9a
+AssetOrigin:
+  serializedVersion: 1
+  productId: 269480
+  packageName: 4K Tiled Ground Textures (part 1)
+  packageVersion: 1.1
+  assetPath: Assets/4K Tiled Ground Textures p1/Textures/water/water_toon_1.png
+  uploadId: 660586
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +27,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -42,7 +50,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
@@ -63,8 +71,10 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 4096
     resizeAlgorithm: 0
@@ -74,9 +84,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -86,9 +97,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -98,9 +110,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -110,32 +123,1893 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: water_toon_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3641
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd99d3bd505bcdb4a800b582fa76ef4d
+      internalID: -1558752277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_1
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 3641
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a8f79dfd1f65514fa6015318d3ad5fe
+      internalID: -1727569781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_2
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 3641
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21b1822d0a43594fbf43ddef23e8f00
+      internalID: 1946101306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_3
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 3641
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a65b1b35b80fbee40a110ae85ef10502
+      internalID: 1972405524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_4
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 3641
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4facb0d37e4404a9987515006d62e0
+      internalID: 775041734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_5
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 3641
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a37b6d0d7130be44979c94d9423f2e0
+      internalID: 2084647758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_6
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 3641
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda7f9cfb0858b046a572999e6955d0b
+      internalID: 2005062103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_7
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 3641
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87ca66a079100447aa77d56d9a90a2a
+      internalID: 1432539737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_8
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 3641
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260fce66305b47144bc7be84184ff3b7
+      internalID: 1028367452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3186
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5f8c010c82c6d49bce0020dab634c1
+      internalID: 584361407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_10
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 3186
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c600d7cfc57f88b42b2a8d9ad8e77a32
+      internalID: -1375052697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_11
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 3186
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9654c07443bbcd4bb3a9e62d493a3ca
+      internalID: -761215840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_12
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 3186
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eacc1db0af899c49b325723c7d81e38
+      internalID: 1707999551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_13
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 3186
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269ffc82370dd1040a4d1ba89974ca52
+      internalID: -45696568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_14
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 3186
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4fbbe74f24a394b8eb5c0a3c13d395
+      internalID: -628822270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_15
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 3186
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b396bbab48d629c45b9863bf79c8ffaa
+      internalID: 123645333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_16
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 3186
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ffcae090dc87fe448bd4de75ad30b4a
+      internalID: 918889625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_17
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 3186
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345da6c71237b02448bbdd69b31ee1ec
+      internalID: 1528781369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2731
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f74ebaec0c5f448aaedf0e818e4af0
+      internalID: 829437800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_19
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 2731
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c92e7060b77524d8c51f302e403e0f
+      internalID: 1894978658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_20
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 2731
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22728ef80af5bcd43a9bac50dc20f492
+      internalID: -1103601552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_21
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 2731
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe4216913dd29a49be00cdc4b81142e
+      internalID: 1380767991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_22
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 2731
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb93a264c72fc3243afacbbf010d4b72
+      internalID: -1981604700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_23
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 2731
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54507ff6cccfea34fbdf61185f8541b3
+      internalID: -434590293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_24
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 2731
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58597e72ebb514c4395d9cb64fdd9935
+      internalID: -2118000492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_25
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 2731
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d56c5cf9960414ca86b2092bdd84de
+      internalID: -508685366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_26
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 2731
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40bc13f0508c17c4b801727dd51a0fd3
+      internalID: 1218337699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2276
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d72218ea66069468cbed2c0003d9ed
+      internalID: -1112099488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_28
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 2276
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9f5313750cc0384180799567894c156
+      internalID: 438595941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_29
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 2276
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba72611853441f48b621f880a14ff31
+      internalID: -866102064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_30
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 2276
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea91c81708e0f2048a28067e3bc02957
+      internalID: -1973446451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_31
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 2276
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f411e63b959d4f469a154f8a08bfc1c
+      internalID: 1000386437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_32
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 2276
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93bb7203a46a0704f92b52f6a7282564
+      internalID: -1216607946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_33
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 2276
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c45aa683cf53f498382180c9f817fd
+      internalID: -1058069269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_34
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 2276
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4baae9a501abf419d012db2b440fb6
+      internalID: -906249953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_35
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 2276
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b9e33d42c6c1a40ab134792a557454
+      internalID: 391807668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1821
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d373a3e77be5e40b591b5d04146295
+      internalID: 170168971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_37
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 1821
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75405384f0a2a204abc4a6c72be6dd7a
+      internalID: -1178415388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_38
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1821
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00e28ed1af14af45a54752681516bff
+      internalID: 1173471406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_39
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1821
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e3bc2565ec47b44aa4e29dfe3178de
+      internalID: -764410067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_40
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1821
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0039ac4ef5dec4d967b362d4573f7c
+      internalID: -1050625816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_41
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 1821
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3197fd534958a984ab69316a566de99a
+      internalID: -1613858692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_42
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1821
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14179180138846a4b814a5155a02b2a9
+      internalID: -638574402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_43
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 1821
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71dea2aa77a187e48bda40822bced9ec
+      internalID: 1188620086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_44
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 1821
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a29af0caf5d6a46acd1130c73118ba
+      internalID: 426894287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1366
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3572aec7b34976543a2e9ce84f75b784
+      internalID: -1684211257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_46
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 1366
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47df8dbcf07676a4b9da745a3d8e1c80
+      internalID: 480841911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_47
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1366
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9b20f8b1e3ee9c459c8deec25f067a4
+      internalID: 2072110747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_48
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1366
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ea1f58702d95f3479200373edc750b8
+      internalID: -2141119966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_49
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1366
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89225b419704c0844b18dfa615ceb030
+      internalID: 909477748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_50
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 1366
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1dc6ae4ea1e29d47a3662b588ee96d5
+      internalID: 101324903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_51
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1366
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05a1f48d7c57a8c40b1c57f500fdc3c5
+      internalID: -1493163105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_52
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 1366
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19286ad4e6cbd9e4ca93a43c4f781880
+      internalID: 1224354443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_53
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 1366
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d557734cc4b1afb419073e17c45af657
+      internalID: 707216172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 911
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d418486cd7ca18c4b9ae2523a7a7b8ed
+      internalID: -516643351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_55
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 911
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec87d99b397b5844ba9bfd5a28815c9
+      internalID: 1958590608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_56
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 911
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 596386095b712ab459281c740db6e078
+      internalID: -1886959971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_57
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 911
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca399ab1e0f561645aff9cb4cd045f50
+      internalID: -778030913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_58
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 911
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9632b6a9f911341bbf016769e77792
+      internalID: 578418925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_59
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 911
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 399158d7e66b5054eb9b241ca3ad0e88
+      internalID: -1332994811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_60
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 911
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43338b0643447fb45806115d31df79d1
+      internalID: -1252252350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_61
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 911
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c42e9a3375040418fe8383b366ff2e
+      internalID: -1429259763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_62
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 911
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9385a59123d9c1f41ab1ccef13ee84d5
+      internalID: 287783155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 456
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae18ea939fe36b744baafbdfb5a18e56
+      internalID: -2138565708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_64
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 456
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e29a971881db641ab500b6823ca202
+      internalID: -296521673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_65
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 456
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d13f8b8a0bc8943b6b4780f1ad195b
+      internalID: -998983968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_66
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 456
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6388b1b75b498614394c2313ef531b70
+      internalID: 121230354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_67
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 456
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b977646e656a5342992ad711a80d41b
+      internalID: 988442474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_68
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 456
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0bd028215fc48d4696581367ec0ede9
+      internalID: 1966090999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_69
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 456
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6804feb5a03b3724d9fc70ea0f0d771a
+      internalID: 662722085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_70
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 456
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b199043a86e5b7c4ba40e5e4ca96209e
+      internalID: -588562868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_71
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 456
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6fd5e22ab1d524baaeea70e2b4c529
+      internalID: 1674904551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27535e24b0f6b5498027239dd6157de
+      internalID: -1652078205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_73
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 1
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff98aece15793e44b5a7336f44edddd
+      internalID: 663897060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_74
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775a64500c0072d4eab1685a713a370e
+      internalID: -1664928262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_75
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d189ad7439bf9334b8a529c6e7b675bb
+      internalID: 1190762795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_76
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ddc5f574ff03d438e7a765bef577f9
+      internalID: -1444698448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_77
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 1
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6e9a26cbdd751408804bbd491db19a
+      internalID: -1843306571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_78
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d121ab7a576bb6841a161594a6c84c9e
+      internalID: 1934643571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_79
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 1
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8450fe7697f0b64bb74b7b319b31674
+      internalID: 503360116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_toon_1_80
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 1
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d8509362915d547a2334a22d34b581
+      internalID: 1703781836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
-  spritePackingTag: 
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":9.0},"gridSpriteSize":{"x":455.0,"y":455.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      water_toon_1_0: -1558752277
+      water_toon_1_1: -1727569781
+      water_toon_1_10: -1375052697
+      water_toon_1_11: -761215840
+      water_toon_1_12: 1707999551
+      water_toon_1_13: -45696568
+      water_toon_1_14: -628822270
+      water_toon_1_15: 123645333
+      water_toon_1_16: 918889625
+      water_toon_1_17: 1528781369
+      water_toon_1_18: 829437800
+      water_toon_1_19: 1894978658
+      water_toon_1_2: 1946101306
+      water_toon_1_20: -1103601552
+      water_toon_1_21: 1380767991
+      water_toon_1_22: -1981604700
+      water_toon_1_23: -434590293
+      water_toon_1_24: -2118000492
+      water_toon_1_25: -508685366
+      water_toon_1_26: 1218337699
+      water_toon_1_27: -1112099488
+      water_toon_1_28: 438595941
+      water_toon_1_29: -866102064
+      water_toon_1_3: 1972405524
+      water_toon_1_30: -1973446451
+      water_toon_1_31: 1000386437
+      water_toon_1_32: -1216607946
+      water_toon_1_33: -1058069269
+      water_toon_1_34: -906249953
+      water_toon_1_35: 391807668
+      water_toon_1_36: 170168971
+      water_toon_1_37: -1178415388
+      water_toon_1_38: 1173471406
+      water_toon_1_39: -764410067
+      water_toon_1_4: 775041734
+      water_toon_1_40: -1050625816
+      water_toon_1_41: -1613858692
+      water_toon_1_42: -638574402
+      water_toon_1_43: 1188620086
+      water_toon_1_44: 426894287
+      water_toon_1_45: -1684211257
+      water_toon_1_46: 480841911
+      water_toon_1_47: 2072110747
+      water_toon_1_48: -2141119966
+      water_toon_1_49: 909477748
+      water_toon_1_5: 2084647758
+      water_toon_1_50: 101324903
+      water_toon_1_51: -1493163105
+      water_toon_1_52: 1224354443
+      water_toon_1_53: 707216172
+      water_toon_1_54: -516643351
+      water_toon_1_55: 1958590608
+      water_toon_1_56: -1886959971
+      water_toon_1_57: -778030913
+      water_toon_1_58: 578418925
+      water_toon_1_59: -1332994811
+      water_toon_1_6: 2005062103
+      water_toon_1_60: -1252252350
+      water_toon_1_61: -1429259763
+      water_toon_1_62: 287783155
+      water_toon_1_63: -2138565708
+      water_toon_1_64: -296521673
+      water_toon_1_65: -998983968
+      water_toon_1_66: 121230354
+      water_toon_1_67: 988442474
+      water_toon_1_68: 1966090999
+      water_toon_1_69: 662722085
+      water_toon_1_7: 1432539737
+      water_toon_1_70: -588562868
+      water_toon_1_71: 1674904551
+      water_toon_1_72: -1652078205
+      water_toon_1_73: 663897060
+      water_toon_1_74: -1664928262
+      water_toon_1_75: 1190762795
+      water_toon_1_76: -1444698448
+      water_toon_1_77: -1843306571
+      water_toon_1_78: 1934643571
+      water_toon_1_79: 503360116
+      water_toon_1_8: 1028367452
+      water_toon_1_80: 1703781836
+      water_toon_1_9: 584361407
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 269480
-  packageName: 4K Tiled Ground Textures (part 1)
-  packageVersion: 1.1
-  assetPath: Assets/4K Tiled Ground Textures p1/Textures/water/water_toon_1.png
-  uploadId: 660586
