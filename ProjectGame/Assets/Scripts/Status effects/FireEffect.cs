@@ -32,7 +32,7 @@ public class FireEffect : StatusEffect
 
         if (timer >= tickInterval)
         {
-            target.TakeDamage(damagePerTick);
+            target.TakeDamage(DamageInfo.FromEffect(damagePerTick, DamageType.Fire));
             timer = 0f;
         }
 
@@ -55,6 +55,6 @@ public class FireEffect : StatusEffect
     public override void OnMaxStacksReached()
     {
         Debug.Log("Max fire stacks reached");
-        target.TakeDamage(50); //Trigger max stack event
+        target.TakeDamage(DamageInfo.FromEffect(50, DamageType.Fire)); //Trigger max stack event
     }
 }

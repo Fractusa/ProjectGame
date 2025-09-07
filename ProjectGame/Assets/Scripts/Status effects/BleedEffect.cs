@@ -30,7 +30,7 @@ public class BleedEffect : StatusEffect
 
         if (timer >= tickInterval)
         {
-            target.TakeDamage(damagePerTick);
+            target.TakeDamage(DamageInfo.FromEffect(damagePerTick, DamageType.Bleed));
             timer = 0f;
         }
 

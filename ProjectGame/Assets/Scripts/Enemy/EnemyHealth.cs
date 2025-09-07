@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -8,12 +10,11 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
     private Animator animator;
-    private List<StatusEffect> activeEffects = new List<StatusEffect>();
+    private List<StatusEffect> activeEffects = new List<StatusEffect>(); //Existing effects
 
     void Start()
     {
         animator = GetComponent<Animator>();
-
         currentHealth = maxHealth;
     }
 
@@ -23,15 +24,37 @@ public class EnemyHealth : MonoBehaviour
         for (int i = activeEffects.Count - 1; i >= 0; i--)
         {
             activeEffects[i].Update(Time.deltaTime);
+            if (activeEffects[i].IsFinished)//Check if any effects are finished and remove them if they are
+            {
+                activeEffects[i].Remove();
+                activeEffects.RemoveAt(i);
+            }
         }
 
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(DamageInfo info)
     {
-        currentHealth -= amount;
+        int finalDamage = info.DamageAmount;
 
+        //add multipliers for dmg here, for example extra dmg against burning enemies.
+
+
+
+
+
+        currentHealth -= Mathf.Max(0, finalDamage);
+        Debug.Log("Enemy took " + finalDamage + " damage, Current HP: " + currentHealth);
         animator.SetTrigger("Hurt");
+
+        if (info.Effects != null && info.Effects.Count > 0)
+        {
+            foreach (var effect in info.Effects)
+            {
+                AddEffect(effect, allowStacks: true, refreshIfExists: true);
+            }
+        }
+        
 
         if (currentHealth <= 0)
         {
@@ -86,14 +109,12 @@ public class EnemyHealth : MonoBehaviour
 
     public void RemoveEffect(StatusEffect effect)
     {
-        activeEffects.Remove(effect);
+        if(activeEffects.Remove(effect))
         effect.Remove();
     }
 
     public bool HasEffect<T>() where T : StatusEffect
-    {
-        return activeEffects.Exists(e => e is T);
-    }
+    => activeEffects.Exists(e => e is T);
 
 
 
