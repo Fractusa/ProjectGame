@@ -10,8 +10,6 @@ public class Enemy1Movement : MonoBehaviour
     public float attackRange = 1f; //Distance to the enemy before able to attack
     public float attackCooldown = 1f; //Time between attacks
     public float attackDamage = 1f; //Damage the enemy deals to the player with attacks
-    public int maxHealth = 50;
-    private int currentHealth;
     private float lastAttackTime;
 
     private Rigidbody2D rb;
@@ -22,7 +20,7 @@ public class Enemy1Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        currentHealth = maxHealth;
+
 
         //If player isn't assigned at the start, assign the player using the player tag
         if (player == null)
@@ -72,16 +70,7 @@ public class Enemy1Movement : MonoBehaviour
         }
     }
 
-    // Handle collisions with other enemies
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            // Stop moving toward the other enemy to prevent overlap
-            Vector2 awayFromOther = (transform.position - collision.transform.position).normalized;
-            rb.MovePosition(rb.position + awayFromOther * 0.1f); // Small nudge to avoid stacking
-        }
-    }
+    
     void AttackPlayer()
     {
         Debug.Log("Enemy attacks player!");
@@ -90,27 +79,7 @@ public class Enemy1Movement : MonoBehaviour
 
     }
 
-    public void TakeDamage(int amount)
-    {
-        currentHealth -= amount;
 
-        animator.SetTrigger("Hurt");
 
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
 
-    public void Die()
-    {
-        Debug.Log("Enemy died!");
-
-        animator.SetTrigger("Die");
-
-        rb.linearVelocity = Vector2.zero;
-        this.enabled = false; //disables the script so it won't attack or chase the player while dead
-
-        Destroy(gameObject, 2f); //waits 2 seconds to destroy enemy
-    }
 }
