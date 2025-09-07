@@ -15,6 +15,8 @@ public class FireEffect : StatusEffect
         this.duration = duration;
     }
 
+    public override int MaxStacks => 5; //Sets max fire stacks
+
     public override void Apply()
     {
         Debug.Log("Enemy is burning!");
@@ -48,5 +50,11 @@ public class FireEffect : StatusEffect
     public override void Remove()
     {
         Debug.Log("Burning effect ended");
+    }
+
+    public override void OnMaxStacksReached()
+    {
+        Debug.Log("Max fire stacks reached");
+        target.TakeDamage(50); //Trigger max stack event
     }
 }

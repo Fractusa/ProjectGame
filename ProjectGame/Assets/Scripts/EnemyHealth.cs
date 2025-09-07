@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -48,27 +49,39 @@ public class EnemyHealth : MonoBehaviour
     }
 
     //Adds the effect and checks if the effect is allowed to stack or not
-    public void AddEffect(StatusEffect newEffect, bool allowStacks = true)
+    public void AddEffect(StatusEffect newEffect, bool allowStacks = true,  bool refreshIfExists = true)
     {
-        //Check for existing effect of same type
-        StatusEffect existing = activeEffects.Find(e => e.GetType() == newEffect.GetType());
+        var effectType = newEffect.GetType();
 
-        if (existing != null)
+        //Count how many stacks are currently on the target
+        int activeCount = activeEffects.Count(e => e.GetType() == effectType);
+
+        if (activeCount >= newEffect.MaxStacks)
         {
-            existing.Refresh();
-
-            if (allowStacks)
+            foreach (var effect in activeEffects.Where(e => e.GetType() == effectType))
             {
-                activeEffects.Add(newEffect);
-                newEffect.Apply();
+                effect.Refresh();
+            }
+            //trigger max stack effect
+            newEffect.OnMaxStacksReached();
+            return;
+        }
+
+        //Check for existing effect of same type
+        if (refreshIfExists && activeCount > 0)
+        {
+            foreach (var effect in activeEffects.Where(e => e.GetType() == effectType))
+            {
+                effect.Refresh();
             }
         }
 
         //no existing effect found, adds the effect
-        activeEffects.Add(newEffect);
-        newEffect.Apply();
-
-
+        if (allowStacks || activeCount == 0)
+        {
+            activeEffects.Add(newEffect);
+            newEffect.Apply();
+        }
     }
 
     public void RemoveEffect(StatusEffect effect)
