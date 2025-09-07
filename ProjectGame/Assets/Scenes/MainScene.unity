@@ -119,6 +119,60 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &98341777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 98341779}
+  - component: {fileID: 98341778}
+  m_Layer: 0
+  m_Name: Enemy Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &98341778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98341777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb544f835c21db47886e8742ce69b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  enemyPrefab: {fileID: 275618474423837546, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
+  player: {fileID: 428982350}
+  spawnInterval: 2
+  spawnRange: 20
+  spawnerTurnedOn: 0
+--- !u!4 &98341779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98341777}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.1, y: -4.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &428982350 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6289971570413680685, guid: a7c769cba53172241a64d5d654e21506, type: 3}
+  m_PrefabInstance: {fileID: 1364876794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &909367122
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,11 +773,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4068685155889072082, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.211958
+      value: -15.02
       objectReference: {fileID: 0}
     - target: {fileID: 4068685155889072082, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.045731902
+      value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 4068685155889072082, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -770,3 +824,4 @@ SceneRoots:
   - {fileID: 1595726703}
   - {fileID: 2210554901203599005}
   - {fileID: 1364876794}
+  - {fileID: 98341779}
