@@ -1,0 +1,20 @@
+using UnityEngine;
+
+public abstract class StatusEffect
+{
+    public string Name { get; private set; }
+    protected EnemyHealth target;
+    public bool IsFinished{ get; protected set; }
+
+    protected StatusEffect(string name, EnemyHealth target)
+    {
+        Name = name;
+        this.target = target;
+        IsFinished = false;
+    }
+
+    public abstract void Apply(); //Called when effect starts
+    public abstract void Update(float deltaTime); //Called every frame/tick
+    public abstract void Refresh(); //Called if re-applied
+    public abstract void Remove(); //Called when effect ends
+}
