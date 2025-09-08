@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 904502837}
   - component: {fileID: 904502838}
   - component: {fileID: 904502839}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,8 +675,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1569894142473963075, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
+      propertyPath: m_Size.y
+      value: 0.09618127
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569894142473963075, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.12190938
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569894142473963075, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689806870254723020, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
+      propertyPath: fireballPrefab
+      value: 
+      objectReference: {fileID: 6785065688402368468, guid: 119881a9d1e4dc94c9bee0654666495f, type: 3}
+    - target: {fileID: 1689806870254723020, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
+      propertyPath: projectileForce
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 6246336600257967269, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -723,8 +739,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7423556175306686413, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423556175306686413, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750139591280152754, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8799701477003936558, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
       propertyPath: weapon
@@ -758,7 +782,7 @@ GameObject:
   - component: {fileID: 2040070137}
   - component: {fileID: 2040070136}
   - component: {fileID: 2040070135}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -774,7 +798,7 @@ Transform:
   m_GameObject: {fileID: 2040070133}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []

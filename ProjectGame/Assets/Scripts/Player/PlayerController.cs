@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     public InputAction MoveAction;
     public float movementSpeed;
     Animator animator;
+    public GameObject fireballPrefab;
+    public float projectileForce = 300;
 
     Rigidbody2D rb;
     Vector2 move;
@@ -42,12 +44,25 @@ public class PlayerController : MonoBehaviour
         else
             animator.SetBool("isMoving", false);
 
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            Launch();
+        }
+
     }
 
     void FixedUpdate()
     {
         Vector2 position = (Vector2)rb.position + move * movementSpeed * Time.deltaTime;
         rb.MovePosition(position);
+    }
+
+    void Launch()
+    {
+        GameObject fireballObject = Instantiate(fireballPrefab, rb.position + Vector2.up * 0.5f, Quaternion.identity);
+        Projectile proj = fireballObject.GetComponent<Projectile>();
+        proj.Launch(moveDirection, projectileForce);
+        //animator.SetTrigger("Launch");
     }
 
 }
