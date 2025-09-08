@@ -7,7 +7,7 @@ public class Enemy1Movement : MonoBehaviour
 
     public Transform player; //To assign the player the enemy should follow(Is also able to auto assign with tag)
     public float speed = 1f; // speed that the enemy moves with towards the player
-    public float attackRange = 1f; //Distance to the enemy before able to attack
+    public float attackRange = 0.5f; //Distance to the enemy before able to attack
     public float attackCooldown = 1f; //Time between attacks
     public float attackDamage = 1f; //Damage the enemy deals to the player with attacks
     private float lastAttackTime;

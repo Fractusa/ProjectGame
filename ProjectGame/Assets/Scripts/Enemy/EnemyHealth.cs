@@ -51,7 +51,7 @@ public class EnemyHealth : MonoBehaviour
 
         //Spawn damage numbers
         Color dmgColor = DamageColors.GetColor(info.Type);
-        DamageTextManager.Instance.ShowDamage(transform.position, finalDamage, dmgColor);
+        DamageTextManager.Instance.ShowDamage(transform, finalDamage, dmgColor);
 
 
 

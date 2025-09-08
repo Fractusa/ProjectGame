@@ -12,21 +12,31 @@ public class DamageTextManager : MonoBehaviour
     }
 
 
-    public void ShowDamage(Vector3 worldPosition, int amount, Color color)
+    public void ShowDamage(Transform target, int amount, Color color)
     {
-        //Convert world position to screen position
+        //Set position for damage numbers
+        Vector3 worldPosition = target.position + Vector3.up * 0.5f;
+
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPosition);
 
         //Instantiate prefab inside the canvas
         FloatingDamageText dmgText = Instantiate(damageTextPrefab, worldCanvas.transform);
 
-        //Place the damage numbers at the converted screen position
-        dmgText.transform.position = screenPos;
+        //Convert screen space to local canvas position
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            worldCanvas.transform as RectTransform,
+            screenPos,
+            Camera.main,
+            out Vector2 localPoint
+        );
+
+        RectTransform rect = dmgText.GetComponent<RectTransform>();
+        rect.localPosition = localPoint;
+
+        rect.pivot = new Vector2(0.5f, 0.5f);
 
         //Set text + color
         dmgText.Setup(amount.ToString(), color);
-
-        Debug.Log("Damage text screen position: " + dmgText.transform.position);
     }
 
 

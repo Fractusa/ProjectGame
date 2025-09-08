@@ -13,7 +13,11 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+        if (currentHealth <= 0)
+        {
+            Die();
 
+        }
     }
 
     public void TakeDamage(int amount)
@@ -21,11 +25,8 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= amount;
         Debug.Log("Player took damage");
 
-        if (currentHealth <= 0)
-        {
-            Die();
-            
-        }
+        //Show damage numbers above head
+        DamageTextManager.Instance.ShowDamage(transform, amount, Color.white);
     }
     private void Die()
     {
