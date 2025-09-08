@@ -4,7 +4,7 @@ public class DamageTextManager : MonoBehaviour
 {
     public static DamageTextManager Instance;
     public FloatingDamageText damageTextPrefab;
-    public Canvas worldCanvas;
+    public Canvas canvas;
 
     void Awake()
     {
@@ -16,15 +16,14 @@ public class DamageTextManager : MonoBehaviour
     {
         //Set position for damage numbers
         Vector3 worldPosition = target.position + Vector3.up * 0.5f;
-
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPosition);
 
         //Instantiate prefab inside the canvas
-        FloatingDamageText dmgText = Instantiate(damageTextPrefab, worldCanvas.transform);
+        FloatingDamageText dmgText = Instantiate(damageTextPrefab, canvas.transform);
 
         //Convert screen space to local canvas position
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            worldCanvas.transform as RectTransform,
+            canvas.transform as RectTransform,
             screenPos,
             Camera.main,
             out Vector2 localPoint

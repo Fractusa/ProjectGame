@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 214837562}
   - component: {fileID: 214837561}
   m_Layer: 5
-  m_Name: WorldCanvas
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 2040070137}
   m_PlaneDistance: 8
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageTextManager
   damageTextPrefab: {fileID: 8910415831038545150, guid: 2682768909013fa4b972fce38348a22a, type: 3}
-  worldCanvas: {fileID: 214837563}
+  canvas: {fileID: 214837563}
 --- !u!4 &837512084
 Transform:
   m_ObjectHideFlags: 0
@@ -722,6 +722,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8799701477003936558, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 904502839}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -752,7 +756,7 @@ GameObject:
   - component: {fileID: 2040070135}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -766,7 +770,7 @@ Transform:
   m_GameObject: {fileID: 2040070133}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
