@@ -31,13 +31,16 @@ public class EnemyHealth : MonoBehaviour
             }
         }
 
+                if (currentHealth <= 0)
+                {
+                    Die();
+                }
+
     }
 
     public void TakeDamage(DamageInfo info)
     {
         int finalDamage = info.DamageAmount;
-
-        //add multipliers for dmg here, for example extra dmg against burning enemies.
 
 
 
@@ -45,6 +48,13 @@ public class EnemyHealth : MonoBehaviour
 
         currentHealth -= Mathf.Max(0, finalDamage);
         Debug.Log("Enemy took " + finalDamage + " damage, Current HP: " + currentHealth);
+
+        //Spawn damage numbers
+        Color dmgColor = DamageColors.GetColor(info.Type);
+        DamageTextManager.Instance.ShowDamage(transform.position, finalDamage, dmgColor);
+
+
+
         animator.SetTrigger("Hurt");
 
         if (info.Effects != null && info.Effects.Count > 0)
@@ -55,11 +65,6 @@ public class EnemyHealth : MonoBehaviour
             }
         }
         
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
     }
 
     public void Die()
@@ -68,7 +73,7 @@ public class EnemyHealth : MonoBehaviour
 
         animator.SetTrigger("Die");
 
-        Destroy(gameObject, 2f); //waits 2 seconds to destroy enemy
+        Destroy(gameObject); //waits 2 seconds to destroy enemy
     }
 
     //Adds the effect and checks if the effect is allowed to stack or not

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7151222705800813505}
   - component: {fileID: 1563630838024875365}
   - component: {fileID: 7431639415920409495}
+  - component: {fileID: 6146604719432127}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -221,3 +222,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
   damageAmount: 10
   attackCooldown: 1
+--- !u!114 &6146604719432127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275618474423837546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab6afa534e6a3e149a31a8a8d9b35ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 50
