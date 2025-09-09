@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageTextManager : MonoBehaviour
@@ -6,14 +7,30 @@ public class DamageTextManager : MonoBehaviour
     public FloatingDamageText damageTextPrefab;
     public Canvas canvas;
 
+    //Track active texts per target and it's damagetype
+    private Dictionary<(Transform, DamageType), FloatingDamageText> activeTexts = new();
+
     void Awake()
     {
         Instance = this;
     }
 
 
-    public void ShowDamage(Transform target, int amount, Color color)
+
+
+    public FloatingDamageText ShowDamage(Transform target, int amount, Color color)
     {
+        if (damageTextPrefab == null)
+        {
+            Debug.LogError("DamageTextManager: damageTextPrefab is not assigned!");
+            return null;
+        }
+        if (canvas == null)
+        {
+            Debug.LogError("DamageTextManager: worldCanvas is not assigned!");
+            return null;
+        }
+
         //Set position for damage numbers
         Vector3 worldPosition = target.position + Vector3.up * 0.5f;
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPosition);
@@ -32,10 +49,10 @@ public class DamageTextManager : MonoBehaviour
         RectTransform rect = dmgText.GetComponent<RectTransform>();
         rect.localPosition = localPoint;
 
-        rect.pivot = new Vector2(0.5f, 0.5f);
-
         //Set text + color
-        dmgText.Setup(amount.ToString(), color);
+        dmgText.Setup(amount, color);
+
+        return dmgText;
     }
 
 

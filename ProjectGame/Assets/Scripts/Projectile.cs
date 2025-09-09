@@ -32,7 +32,7 @@ public class Projectile : MonoBehaviour
             EnemyHealth enemy = other.GetComponent<EnemyHealth>();
             if (enemy != null)
             {
-                DamageInfo dmg = new DamageInfo(baseDamage);
+                DamageInfo dmg = new DamageInfo(baseDamage, DamageType.Physical, DamageSource.Weapon);
 
                 enemy.TakeDamage(dmg);
             }

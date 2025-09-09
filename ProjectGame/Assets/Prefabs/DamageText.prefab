@@ -61,6 +61,7 @@ MonoBehaviour:
   text: {fileID: 1869749237252271645}
   lifetime: 1
   floatSpeed: 2
+  floatDirection: {x: 0, y: 1, z: 0}
 --- !u!1 &7816485115977893567
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,11 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
     private Animator animator;
+
+
     private List<StatusEffect> activeEffects = new List<StatusEffect>(); //Existing effects
+
+    private Dictionary<DamageType, FloatingDamageText> activeDotTexts = new Dictionary<DamageType, FloatingDamageText>();
 
     void Start()
     {
@@ -31,27 +35,33 @@ public class EnemyHealth : MonoBehaviour
             }
         }
 
-                if (currentHealth <= 0)
-                {
-                    Die();
-                }
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
 
     }
 
     public void TakeDamage(DamageInfo info)
     {
         int finalDamage = info.DamageAmount;
-
-
-
-
-
         currentHealth -= Mathf.Max(0, finalDamage);
-        Debug.Log("Enemy took " + finalDamage + " damage, Current HP: " + currentHealth);
+
+
+        Debug.Log($"Enemy took {finalDamage} {info.Type} damage, HP: + { currentHealth}");
 
         //Spawn damage numbers
         Color dmgColor = DamageColors.GetColor(info.Type);
-        DamageTextManager.Instance.ShowDamage(transform, finalDamage, dmgColor);
+
+
+        if (info.IsDoT)
+        {
+            ShowAccumulatedDot(info, dmgColor);
+        }
+        else
+        {
+            DamageTextManager.Instance.ShowDamage(transform, finalDamage, dmgColor);
+        }
 
 
 
@@ -76,8 +86,52 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject); //waits 2 seconds to destroy enemy
     }
 
+    public void ShowAccumulatedDot(DamageInfo info, Color color)
+    {
+        if (activeDotTexts.TryGetValue(info.Type, out FloatingDamageText dotText))
+        {
+            if (dotText != null)
+            {
+                //Adds to existing number
+                dotText.AddDamage(info.DamageAmount);
+            }
+            else
+            {
+                //Cleans up number and creates new dot number
+                activeDotTexts.Remove(info.Type);
+                CreateNewDot(info, color);
+            }
+        }
+        else
+        {
+            //First time dot is applied(Creates new number)
+            CreateNewDot(info, color);
+        }
+    }
+
+    private void CreateNewDot(DamageInfo info, Color color)
+    {
+        FloatingDamageText dotText = DamageTextManager.Instance.ShowDamage(transform, info.DamageAmount, color);
+        if (dotText == null) return;
+
+
+        activeDotTexts[info.Type] = dotText;
+
+        //When the floating texts destroys itself, remove from dictionary
+        dotText.OnDestroyed += () =>
+        {
+            //Remove if it's still mapped to this instance
+            if (activeDotTexts.TryGetValue(info.Type, out var current) && current == dotText)
+            {
+                activeDotTexts.Remove(info.Type);
+            }
+        };
+
+    }
+
+
     //Adds the effect and checks if the effect is allowed to stack or not
-    public void AddEffect(StatusEffect newEffect, bool allowStacks = true,  bool refreshIfExists = true)
+    public void AddEffect(StatusEffect newEffect, bool allowStacks = true, bool refreshIfExists = true)
     {
         var effectType = newEffect.GetType();
 

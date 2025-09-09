@@ -39,7 +39,7 @@ public class MeleeWeapon : MonoBehaviour
             EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
             if (enemy != null)
             {
-                DamageInfo dmg = new DamageInfo(baseDamage);
+                DamageInfo dmg = new DamageInfo(baseDamage, DamageType.Physical, DamageSource.Weapon);
 
                 // example for adding effects
                 dmg.Effects.Add(new FireEffect(enemy, 5, 1f, 3f));
