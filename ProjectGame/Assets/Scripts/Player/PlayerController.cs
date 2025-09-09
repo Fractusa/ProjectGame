@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         else
             animator.SetBool("isMoving", false);
 
-        if(Input.GetKeyDown(KeyCode.C))
+        if(Input.GetMouseButtonDown(0))
         {
             Launch();
         }
@@ -59,9 +59,16 @@ public class PlayerController : MonoBehaviour
 
     void Launch()
     {
+        //Finds the mouse position, supplies a z value and then converts from screen space to world space before calculating the shot direction
+        //The shot direction is then normalized, since we are only interested in the general direction to launch the projectile at
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = Camera.main.nearClipPlane;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        Vector3 shootDir = (mousePos - transform.position).normalized;
+
         GameObject fireballObject = Instantiate(fireballPrefab, rb.position + Vector2.up * 0.5f, Quaternion.identity);
         Projectile proj = fireballObject.GetComponent<Projectile>();
-        proj.Launch(moveDirection, projectileForce);
+        proj.Launch(shootDir, projectileForce);
         //animator.SetTrigger("Launch");
     }
 

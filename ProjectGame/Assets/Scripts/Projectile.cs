@@ -22,8 +22,7 @@ public class Projectile : MonoBehaviour
 
     public void Launch(Vector2 direction, float force)
     {
-        rb.AddForce(direction * force);
-
+        rb.AddForce(direction.normalized * force);
     }
 
     void OnTriggerEnter2D(Collider2D other)

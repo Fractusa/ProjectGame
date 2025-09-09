@@ -686,14 +686,6 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1689806870254723020, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
-      propertyPath: fireballPrefab
-      value: 
-      objectReference: {fileID: 6785065688402368468, guid: 119881a9d1e4dc94c9bee0654666495f, type: 3}
-    - target: {fileID: 1689806870254723020, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
-      propertyPath: projectileForce
-      value: 750
-      objectReference: {fileID: 0}
     - target: {fileID: 6246336600257967269, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.85319

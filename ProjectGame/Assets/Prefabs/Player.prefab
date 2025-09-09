@@ -180,6 +180,8 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   movementSpeed: 10
+  fireballPrefab: {fileID: 6785065688402368468, guid: 119881a9d1e4dc94c9bee0654666495f, type: 3}
+  projectileForce: 1000
 --- !u!114 &3035764914230837567
 MonoBehaviour:
   m_ObjectHideFlags: 0
