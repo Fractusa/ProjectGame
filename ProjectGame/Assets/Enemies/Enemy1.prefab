@@ -234,4 +234,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6afa534e6a3e149a31a8a8d9b35ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 50
+  maxHealth: 200
+  experiencePrefab: {fileID: 5658820540263630409, guid: 8ee0046007778a940beb780b1282601e, type: 3}
