@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
         {
             //Makes sure that health value stays within 0 and max health.
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-            DamageTextManager.Instance.ShowDamage(transform, amount, Color.white);
+            DamageTextManager.Instance.ShowDamage(transform, amount, Color.red);
             Debug.Log("Player took " + amount + " damage");
         }
         else if (amount > 0)
