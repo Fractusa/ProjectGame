@@ -10,7 +10,7 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
     private Animator animator;
-
+    public GameObject experiencePrefab;
 
     private List<StatusEffect> activeEffects = new List<StatusEffect>(); //Existing effects
 
@@ -82,7 +82,8 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("Enemy died!");
 
         animator.SetTrigger("Die");
-
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        GameObject experience = Instantiate(experiencePrefab, rb.position, Quaternion.identity);
         Destroy(gameObject); //waits 2 seconds to destroy enemy
     }
 
