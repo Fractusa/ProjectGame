@@ -10,9 +10,10 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
     private Animator animator;
-    public GameObject experiencePrefab;
+    [SerializeField] private GameObject experiencePrefab;
+    [SerializeField] private GameObject healthPrefab;
 
-
+    private Rigidbody2D rb;
     private List<StatusEffect> activeEffects = new List<StatusEffect>(); //Existing effects
 
     private Dictionary<DamageType, FloatingDamageText> activeDotTexts = new Dictionary<DamageType, FloatingDamageText>();
@@ -21,6 +22,7 @@ public class EnemyHealth : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -99,9 +101,7 @@ public class EnemyHealth : MonoBehaviour
             }
         }
         activeDotTexts.Clear();
-
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        GameObject experience = Instantiate(experiencePrefab, rb.position, Quaternion.identity);
+        EnemyEvents.EnemyDied(rb.position, experiencePrefab);
 
         Destroy(gameObject); //destroys enemy
     }
