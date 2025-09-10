@@ -39,7 +39,8 @@ public class EnemyDamage : MonoBehaviour
             PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(damageAmount);
+                //damageAmount is converted to a negative number, to correctly damage the player with ChangeHealth()
+                playerHealth.ChangeHealth(-damageAmount);
                 lastAttackTime = Time.time; // Reset the cooldown between the attacks
             }
         }

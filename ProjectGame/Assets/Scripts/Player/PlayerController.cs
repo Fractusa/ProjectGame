@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     public GameObject fireballPrefab;
     public float projectileForce = 300;
+    public int experience = 0;
 
     Rigidbody2D rb;
     Vector2 move;
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
         //Reads the value of Vector2(x, y) and uses transform to add these values to the player character, giving movement
         move = MoveAction.ReadValue<Vector2>();
 
-        //Checks if the users input values are above 0 in either x or y, if triggered the Move Direction is set to face the correct direction
+        //Checks if the users input values are above/below 0 in either x or y, if triggered the Move Direction is set to face the correct direction
         if(!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
         {
             moveDirection.Set(move.x, move.y);
@@ -68,6 +69,8 @@ public class PlayerController : MonoBehaviour
 
         GameObject fireballObject = Instantiate(fireballPrefab, rb.position + Vector2.up * 0.5f, Quaternion.identity);
         Projectile proj = fireballObject.GetComponent<Projectile>();
+        float angle = Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg;
+        fireballObject.transform.rotation = Quaternion.Euler(0, 0, angle);
         proj.Launch(shootDir, projectileForce);
         //animator.SetTrigger("Launch");
     }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Projectile_Fireball
+  - Health_Collectible
+  - Exp_Collectible
   layers:
   - Default
   - TransparentFX
