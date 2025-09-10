@@ -48,7 +48,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= Mathf.Max(0, finalDamage);
 
 
-        Debug.Log($"Enemy took {finalDamage} {info.Type} damage, HP: + { currentHealth}");
+        Debug.Log($"Enemy took {finalDamage} {info.Type} damage, HP: { currentHealth}");
 
         //Spawn damage numbers
         Color dmgColor = DamageColors.GetColor(info.Type);
@@ -60,7 +60,13 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
-            DamageTextManager.Instance.ShowDamage(transform, finalDamage, dmgColor);
+            //normal damage doesn't follow the target
+            DamageTextManager.Instance.ShowDamage(
+                transform,
+                finalDamage,
+                dmgColor,
+                info.IsDoT,
+                offset: Vector3.up);
         }
 
 
@@ -83,7 +89,17 @@ public class EnemyHealth : MonoBehaviour
 
         animator.SetTrigger("Die");
 
-        Destroy(gameObject); //waits 2 seconds to destroy enemy
+
+        foreach (var entry in activeDotTexts)
+        {
+            if (entry.Value != null)
+            {
+                Destroy(entry.Value.gameObject);
+            }
+        }
+        activeDotTexts.Clear();
+
+        Destroy(gameObject); //destroys enemy
     }
 
     public void ShowAccumulatedDot(DamageInfo info, Color color)
@@ -111,7 +127,19 @@ public class EnemyHealth : MonoBehaviour
 
     private void CreateNewDot(DamageInfo info, Color color)
     {
-        FloatingDamageText dotText = DamageTextManager.Instance.ShowDamage(transform, info.DamageAmount, color);
+        int index = activeDotTexts.Count;
+
+        //Set vertical offset based on amount of active dots, so dot damage numbers don't stack ontop of each other
+        Vector3 offset = Vector3.right * 0.5f + (Vector3.down * (0.5f * index));
+
+        FloatingDamageText dotText = DamageTextManager.Instance.ShowDamage(
+        transform,
+        info.DamageAmount,
+        color,
+        follow: true, //Stick to enemy
+        offset: offset  //offsets numbers to prevent stacking
+        );
+
         if (dotText == null) return;
 
 

@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyPrefab: {fileID: 275618474423837546, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
-  player: {fileID: 0}
+  player: {fileID: 1731498377}
   spawnInterval: 2
   spawnRange: 20
   spawnerTurnedOn: 0

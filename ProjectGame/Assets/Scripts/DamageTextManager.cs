@@ -7,52 +7,61 @@ public class DamageTextManager : MonoBehaviour
     public FloatingDamageText damageTextPrefab;
     public Canvas canvas;
 
+
     //Track active texts per target and it's damagetype
     private Dictionary<(Transform, DamageType), FloatingDamageText> activeTexts = new();
 
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
     }
 
 
 
 
-    public FloatingDamageText ShowDamage(Transform target, int amount, Color color)
+    public FloatingDamageText ShowDamage(
+        Transform target,
+        int amount,
+        Color color,
+        bool follow = false,
+        Vector3? offset = null)
     {
-        if (damageTextPrefab == null)
+
+        //Set position for damage numbers
+        if (damageTextPrefab == null || canvas == null)
         {
-            Debug.LogError("DamageTextManager: damageTextPrefab is not assigned!");
-            return null;
-        }
-        if (canvas == null)
-        {
-            Debug.LogError("DamageTextManager: worldCanvas is not assigned!");
+            Debug.LogError("DamageTextManager is missing a prefab");
             return null;
         }
 
-        //Set position for damage numbers
-        Vector3 worldPosition = target.position + Vector3.up * 0.5f;
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPosition);
+
+
+
+        Vector3 worldPos = target.position + (offset ?? Vector3.zero);
+        //convert to local canvas position
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
 
         //Instantiate prefab inside the canvas
         FloatingDamageText dmgText = Instantiate(damageTextPrefab, canvas.transform);
 
-        //Convert screen space to local canvas position
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvas.transform as RectTransform,
             screenPos,
             Camera.main,
             out Vector2 localPoint
         );
-
-        RectTransform rect = dmgText.GetComponent<RectTransform>();
-        rect.localPosition = localPoint;
+        (dmgText.transform as RectTransform).localPosition = localPoint;
 
         //Set text + color
-        dmgText.Setup(amount, color);
-
+        dmgText.Setup(amount, color, follow, offset, target, worldPos);
         return dmgText;
+
     }
 
 
