@@ -29,6 +29,6 @@ public class CollectibleController : MonoBehaviour
 
     public void SpawnCollectible(Vector2 position, GameObject collectible)
     {
-        Instantiate(experiencePrefab, position, Quaternion.identity);
+        Instantiate(collectible, position, Quaternion.identity);
     }
 }
