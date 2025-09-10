@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class EnemyEvents : MonoBehaviour
+public static class EnemyEvents
 {
     public static event Action<Vector2, GameObject> OnEnemyDied;
 
