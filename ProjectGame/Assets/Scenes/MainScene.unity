@@ -553,6 +553,7 @@ GameObject:
   - component: {fileID: 1415896704}
   - component: {fileID: 1415896703}
   - component: {fileID: 1415896702}
+  - component: {fileID: 1415896705}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -621,6 +622,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1415896705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415896701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bfa11b3822594749a688bf5329eebbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectibleController
+  experiencePrefab: {fileID: 5658820540263630409, guid: 8ee0046007778a940beb780b1282601e, type: 3}
+  healthPrefab: {fileID: 5998754975683185711, guid: 604b552ac6d0f8d42a54d1378a0660dd, type: 3}
 --- !u!1 &1595726701
 GameObject:
   m_ObjectHideFlags: 0
