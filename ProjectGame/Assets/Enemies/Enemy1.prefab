@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4068685155889072082}
   - component: {fileID: 3596524855251813160}
   - component: {fileID: 8728310590037719581}
+  - component: {fileID: 3415859521564642985}
   - component: {fileID: 5335616923452202424}
   - component: {fileID: 7151222705800813505}
   - component: {fileID: 1563630838024875365}
@@ -118,6 +119,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3415859521564642985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275618474423837546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea3aec28ff0bbe43a77e4cdfc173ca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Stats
+  maxHealth: 40
+  movementSpeed: 5
+  meleeDamage: 10
+  projectileDamage: 0
+  projectileRange: 0
+  acidDamage: 0
+  fireDamage: 0
 --- !u!114 &5335616923452202424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,3 +256,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 200
   experiencePrefab: {fileID: 5658820540263630409, guid: 8ee0046007778a940beb780b1282601e, type: 3}
+  healthPrefab: {fileID: 0}

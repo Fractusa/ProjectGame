@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 100;
-    private int currentHealth;
-
+    Stats playerStats;
+    private int currentHealth = 0;
+    public int MaxHealth => playerStats.MaxHealth;
 
     void Start()
     {
-        currentHealth = maxHealth;
+        playerStats = GetComponent<Stats>();
+        currentHealth = playerStats.MaxHealth;
     }
 
     void Update()
@@ -39,14 +40,14 @@ public class PlayerHealth : MonoBehaviour
         if (amount < 0)
         {
             //Makes sure that health value stays within 0 and max health.
-            currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+            currentHealth = Mathf.Clamp(currentHealth + amount, 0, MaxHealth);
             DamageTextManager.Instance.ShowDamage(transform, amount, Color.red);
-            Debug.Log("Player took " + amount + " damage");
+            Debug.Log("Player took " + amount + " damage" + MaxHealth);
         }
         else if (amount > 0)
         {
             //Makes sure that health value stays within 0 and max health.
-            currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+            currentHealth = Mathf.Clamp(currentHealth + amount, 0, MaxHealth);
 
             Debug.Log("Player healed " + amount + " damage");
         }
