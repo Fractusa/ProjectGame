@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AbilityEffectBase", menuName = "Scriptable Objects/AbilityEffectBase")]
+[CreateAssetMenu(fileName = "AbilityEffectBase", menuName = "Abilities/Effect")]
 public abstract class AbilityEffectBase : ScriptableObject
 {
     public abstract void OnSetup(GameObject owner);
