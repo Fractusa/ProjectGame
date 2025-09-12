@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public InputAction MoveAction;
-    public float movementSpeed;
     Animator animator;
     public GameObject fireballPrefab;
     public GameObject acidballPrefab;
@@ -56,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 position = (Vector2)rb.position + move * movementSpeed * Time.deltaTime;
+        Vector2 position = (Vector2)rb.position + move * playerStats.MovementSpeed * Time.deltaTime;
         rb.MovePosition(position);
     }
 

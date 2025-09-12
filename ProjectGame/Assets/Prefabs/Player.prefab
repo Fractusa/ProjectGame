@@ -414,7 +414,6 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     m_Flags: 0
-  movementSpeed: 10
   fireballPrefab: {fileID: 6785065688402368468, guid: 119881a9d1e4dc94c9bee0654666495f, type: 3}
   acidballPrefab: {fileID: 0}
   arrowPrefab: {fileID: 0}
@@ -433,7 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   maxHealth: 40
-  movementSpeed: 5
+  movementSpeed: 10
   meleeDamage: 10
   projectileDamage: 20
   projectileRange: 0

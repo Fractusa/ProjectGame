@@ -7,13 +7,13 @@ public enum BuffType
     MeleeDamage,
     ProjectileDamage,
     AcidDamage,
-    FireDamage,
-    ProjectileRange
+    FireDamage
+    //ProjectileRange
 }
 public class Stats : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 40;
-    [SerializeField] private int movementSpeed = 5;
+    [SerializeField] private int movementSpeed = 10;
     [SerializeField] private int meleeDamage = 10;
     [SerializeField] private int projectileDamage = 0;
     [SerializeField] private int projectileRange = 0;
@@ -50,9 +50,9 @@ public class Stats : MonoBehaviour
             case BuffType.FireDamage:
                 fireDamage += valueDelta;
                 break;
-            case BuffType.ProjectileRange:
-                projectileRange += valueDelta;
-                break;
+            // case BuffType.ProjectileRange:
+            //     projectileRange += valueDelta;
+            //     break;
         }
     }
 }
