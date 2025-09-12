@@ -10,10 +10,11 @@ public class EnemySpawner : MonoBehaviour
     public float spawnRange;
     public bool spawnerTurnedOn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
 
-    }
+    public float baseEnemyHealth = 50f;
+    public float healthIncreasePerMinute = 10.0f;
+    public int baseEnemyDamage = 5;
+    public int damageIncreasePerMinute = 1;
 
     // Update is called once per frame
     void Update()
@@ -29,12 +30,26 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnEnemy()
     {
         Vector2 spawnPos = GetSpawnPosition(player.transform, spawnRange);
-        Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+        GameObject newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+
+        EnemyHealth enemyHealth = newEnemy.GetComponent<EnemyHealth>();
+        EnemyDamage enemyDamage = newEnemy.GetComponent<EnemyDamage>();
+
+
+        if (enemyHealth != null && enemyDamage != null)
+        {
+            // Set the enemy's base stats here, the enemy will scale itself
+            enemyHealth.Setup(baseEnemyHealth, healthIncreasePerMinute);
+            enemyDamage.Setup(baseEnemyDamage, damageIncreasePerMinute);
+        }
     }
+
+
 
     private Vector2 GetSpawnPosition(Transform player, float spawnRange)
     {
         Vector2 randomDirection = Random.insideUnitCircle.normalized;
         return (Vector2)player.position + randomDirection * spawnRange;
     }
+
 }

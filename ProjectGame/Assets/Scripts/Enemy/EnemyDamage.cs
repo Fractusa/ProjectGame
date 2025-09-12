@@ -5,9 +5,19 @@ public class EnemyDamage : MonoBehaviour
     public int damageAmount = 1;
     public float attackCooldown = 1f; //cd between being able to do damage
     private float lastAttackTime = -Mathf.Infinity; // Ensures that the enemy can attack the player the instant he is hit 
-    void Start()
+    public void Setup(int baseDamage, int damageIncreasePerMinute)
     {
-
+        if (GameClock.Instance == null)
+        {
+            Debug.LogError("GameClock instance not found. Enemy damage will not scale.");
+            damageAmount = baseDamage;
+        }
+        else
+        {
+            float currentTime = GameClock.Instance.ElapsedTime;
+            int minutes = Mathf.FloorToInt(currentTime / 60);
+            damageAmount = baseDamage + (damageIncreasePerMinute * minutes);
+        }
     }
 
     void Update()
@@ -44,5 +54,9 @@ public class EnemyDamage : MonoBehaviour
                 lastAttackTime = Time.time; // Reset the cooldown between the attacks
             }
         }
+    }
+    public void SetDamageAmount(int amount)
+    {
+        damageAmount = amount;
     }
 }

@@ -25,6 +25,23 @@ public class EnemyHealth : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public void Setup(float baseHealth, float healthIncreasePerMinute)
+    {
+        if (GameClock.Instance == null)
+        {
+            Debug.LogError("GameClock instance not found. Enemy health will not scale.");
+            maxHealth = (int)baseHealth;
+        }
+        else
+        {
+            float currentTime = GameClock.Instance.ElapsedTime;
+            int minutes = Mathf.FloorToInt(currentTime / 60);
+            maxHealth = (int)(baseHealth + (healthIncreasePerMinute * minutes));
+        }
+
+        currentHealth = maxHealth;
+    }
+
     void Update()
     {
         //Update all active effects
@@ -51,7 +68,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= Mathf.Max(0, finalDamage);
 
 
-        Debug.Log($"Enemy took {finalDamage} {info.Type} damage, HP: { currentHealth}");
+        Debug.Log($"Enemy took {finalDamage} {info.Type} damage, HP: {currentHealth}");
 
         //Spawn damage numbers
         Color dmgColor = DamageColors.GetColor(info.Type);
@@ -83,7 +100,7 @@ public class EnemyHealth : MonoBehaviour
                 AddEffect(effect, allowStacks: true, refreshIfExists: true);
             }
         }
-        
+
     }
 
     public void Die()
@@ -200,12 +217,18 @@ public class EnemyHealth : MonoBehaviour
 
     public void RemoveEffect(StatusEffect effect)
     {
-        if(activeEffects.Remove(effect))
-        effect.Remove();
+        if (activeEffects.Remove(effect))
+            effect.Remove();
     }
 
     public bool HasEffect<T>() where T : StatusEffect
     => activeEffects.Exists(e => e is T);
+
+    public void SetMaxHealth(int health)
+    {
+        maxHealth = health;
+        currentHealth = maxHealth;
+    }
 
 
 

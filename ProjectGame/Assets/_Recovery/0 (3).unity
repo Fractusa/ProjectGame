@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 98341779}
   - component: {fileID: 98341778}
-  - component: {fileID: 98341780}
   m_Layer: 0
   m_Name: Enemy Spawner
   m_TagString: Untagged
@@ -153,7 +152,7 @@ MonoBehaviour:
   player: {fileID: 1731498377}
   spawnInterval: 2
   spawnRange: 20
-  spawnerTurnedOn: 1
+  spawnerTurnedOn: 0
   baseEnemyHealth: 50
   healthIncreasePerMinute: 10
   baseEnemyDamage: 5
@@ -173,19 +172,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &98341780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98341777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dfadfdf43a821d4f8502a7c4b46dbf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameClock
-  timeText: {fileID: 220097723}
 --- !u!1 &214837560
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 837512084}
   - component: {fileID: 837512083}
+  - component: {fileID: 837512085}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -476,6 +463,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &837512085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837512082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfadfdf43a821d4f8502a7c4b46dbf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameClock
+  timeText: {fileID: 220097723}
 --- !u!1 &904502836
 GameObject:
   m_ObjectHideFlags: 0
