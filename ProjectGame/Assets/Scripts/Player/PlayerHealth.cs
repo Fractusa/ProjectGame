@@ -5,7 +5,7 @@ public class PlayerHealth : MonoBehaviour
 {
     Stats playerStats;
     public HealthBar healthBar; //Add a public reference to the HealtBar script
-    public int currentHealth = 0;
+    private int currentHealth = 0;
     public int MaxHealth => playerStats.MaxHealth;
 
     void Start()
