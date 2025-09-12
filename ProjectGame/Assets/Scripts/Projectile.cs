@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 public class Projectile : MonoBehaviour
 {
     Rigidbody2D rb;
-    public int baseDamage;
     public int projectileDestructionRange = 100;
+    private int damage;
 
     void Awake()
     {
@@ -20,8 +20,9 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void Launch(Vector2 direction, float force)
+    public void Launch(Vector2 direction, float force, int damageValue)
     {
+        damage = damageValue;
         rb.AddForce(direction.normalized * force);
     }
 
@@ -32,7 +33,7 @@ public class Projectile : MonoBehaviour
             EnemyHealth enemy = other.GetComponent<EnemyHealth>();
             if (enemy != null)
             {
-                DamageInfo dmg = new DamageInfo(baseDamage, DamageType.Physical, DamageSource.Weapon);
+                DamageInfo dmg = new DamageInfo(damage, DamageType.Physical, DamageSource.Weapon);
 
                 enemy.TakeDamage(dmg);
             }

@@ -7,7 +7,8 @@ public enum BuffType
     MeleeDamage,
     ProjectileDamage,
     AcidDamage,
-    FireDamage
+    FireDamage,
+    ProjectileRange
 }
 public class Stats : MonoBehaviour
 {
@@ -48,6 +49,9 @@ public class Stats : MonoBehaviour
                 break;
             case BuffType.FireDamage:
                 fireDamage += valueDelta;
+                break;
+            case BuffType.ProjectileRange:
+                projectileRange += valueDelta;
                 break;
         }
     }

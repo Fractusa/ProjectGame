@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 8764704867723952046}
   - component: {fileID: 1689806870254723020}
   - component: {fileID: 8284372614960483457}
+  - component: {fileID: 609854643817345431}
   - component: {fileID: 3035764914230837567}
   - component: {fileID: 8799701477003936558}
   - component: {fileID: 8750139591280152754}
@@ -415,8 +416,10 @@ MonoBehaviour:
     m_Flags: 0
   movementSpeed: 10
   fireballPrefab: {fileID: 6785065688402368468, guid: 119881a9d1e4dc94c9bee0654666495f, type: 3}
+  acidballPrefab: {fileID: 0}
+  arrowPrefab: {fileID: 0}
   projectileForce: 1000
-  experience: 0
+  playerStats: {fileID: 8284372614960483457}
 --- !u!114 &8284372614960483457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,10 +435,25 @@ MonoBehaviour:
   maxHealth: 40
   movementSpeed: 5
   meleeDamage: 10
-  projectileDamage: 0
+  projectileDamage: 20
   projectileRange: 0
   acidDamage: 0
   fireDamage: 0
+--- !u!114 &609854643817345431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7423556175306686413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fadf44eac504981439e80e0c8f4dbacf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExperienceSystem
+  currentLevel: 0
+  currentXP: 0
+  xpToNextLevel: 10
 --- !u!114 &3035764914230837567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,8 +466,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034d16b74e94d2648ab15d24062ee022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  playerStats: {fileID: 8284372614960483457}
   healthBar: {fileID: 0}
-  currentHealth: 0
 --- !u!114 &8799701477003936558
 MonoBehaviour:
   m_ObjectHideFlags: 0

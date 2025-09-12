@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Stats))]
 public class PlayerAttack : MonoBehaviour
 {
     public MeleeWeapon weapon;

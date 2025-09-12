@@ -1,9 +1,10 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(Stats))]
 public class PlayerHealth : MonoBehaviour
 {
-    Stats playerStats;
+    [SerializeField] Stats playerStats;
     public HealthBar healthBar; //Add a public reference to the HealtBar script
     private int currentHealth = 0;
     public int MaxHealth => playerStats.MaxHealth;
