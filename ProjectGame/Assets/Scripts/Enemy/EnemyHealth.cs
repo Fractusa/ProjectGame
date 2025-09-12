@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyHealth : MonoBehaviour
 {
 
     public int maxHealth = 100;
     private int currentHealth;
+    [SerializeField] float healthSpawnChance = 0.1f;
     private Animator animator;
     public HealthBar healthBar; //Add a public reference to the HealtBar script
     [SerializeField] private GameObject experiencePrefab;
@@ -120,7 +122,6 @@ public class EnemyHealth : MonoBehaviour
 
         animator.SetTrigger("Die");
 
-
         foreach (var entry in activeDotTexts)
         {
             if (entry.Value != null)
@@ -129,6 +130,10 @@ public class EnemyHealth : MonoBehaviour
             }
         }
         activeDotTexts.Clear();
+
+        float healthSpawnValue = Random.value;
+        if (healthSpawnValue < healthSpawnChance)
+            EnemyEvents.EnemyDied(rb.position, healthPrefab);
         EnemyEvents.EnemyDied(rb.position, experiencePrefab);
 
         Destroy(gameObject); //destroys enemy
