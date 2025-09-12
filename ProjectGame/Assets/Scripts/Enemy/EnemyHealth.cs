@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
     private Animator animator;
+    public HealthBar healthBar; //Add a public reference to the HealtBar script
     [SerializeField] private GameObject experiencePrefab;
     [SerializeField] private GameObject healthPrefab;
 
@@ -23,6 +24,12 @@ public class EnemyHealth : MonoBehaviour
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         rb = GetComponent<Rigidbody2D>();
+
+        //Set up the health bar when enemy spawns
+        if (healthBar != null)
+        {
+            healthBar.SetMaxHealth(maxHealth);
+        }
     }
 
     public void Setup(float baseHealth, float healthIncreasePerMinute)
@@ -68,6 +75,10 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= Mathf.Max(0, finalDamage);
 
 
+        if(healthBar != null)
+        {
+            healthBar.SetHealth(currentHealth);
+        }
         Debug.Log($"Enemy took {finalDamage} {info.Type} damage, HP: {currentHealth}");
 
         //Spawn damage numbers

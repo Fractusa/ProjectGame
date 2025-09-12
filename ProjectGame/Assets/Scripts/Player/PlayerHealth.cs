@@ -1,15 +1,23 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
     Stats playerStats;
-    private int currentHealth = 0;
+    public HealthBar healthBar; //Add a public reference to the HealtBar script
+    public int currentHealth = 0;
     public int MaxHealth => playerStats.MaxHealth;
 
     void Start()
     {
         playerStats = GetComponent<Stats>();
         currentHealth = playerStats.MaxHealth;
+
+        //Set up the health bar when player spawns
+        if (healthBar != null)
+        {
+            healthBar.SetMaxHealth(MaxHealth);
+        }
     }
 
     void Update()
@@ -41,6 +49,12 @@ public class PlayerHealth : MonoBehaviour
         {
             //Makes sure that health value stays within 0 and max health.
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, MaxHealth);
+
+            if(healthBar != null)
+            {
+                healthBar.SetHealth(currentHealth);
+            }
+
             DamageTextManager.Instance.ShowDamage(transform, amount, Color.red);
             Debug.Log("Player took " + amount + " damage" + MaxHealth);
         }
@@ -48,6 +62,11 @@ public class PlayerHealth : MonoBehaviour
         {
             //Makes sure that health value stays within 0 and max health.
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, MaxHealth);
+
+            if(healthBar != null)
+            {
+                healthBar.SetHealth(currentHealth);
+            }
 
             Debug.Log("Player healed " + amount + " damage");
         }
