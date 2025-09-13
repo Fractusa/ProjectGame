@@ -15,8 +15,7 @@ public class EnemyDamage : MonoBehaviour
         else
         {
             float currentTime = GameClock.Instance.ElapsedTime;
-            int minutes = Mathf.FloorToInt(currentTime / 60);
-            damageAmount = baseDamage + (damageIncreasePerMinute * minutes);
+            damageAmount = baseDamage + (int)(damageIncreasePerMinute / 60f * currentTime);
         }
     }
 

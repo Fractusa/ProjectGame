@@ -44,8 +44,7 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             float currentTime = GameClock.Instance.ElapsedTime;
-            int minutes = Mathf.FloorToInt(currentTime / 60);
-            maxHealth = (int)(baseHealth + (healthIncreasePerMinute * minutes));
+            maxHealth = (int)(baseHealth + (healthIncreasePerMinute / 60f * currentTime));
         }
 
         currentHealth = maxHealth;

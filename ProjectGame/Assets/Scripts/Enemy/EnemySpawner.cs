@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -5,23 +6,44 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject enemyPrefab;
     public Transform player;
+
+    //Enemy spawner settings
     private float spawnTimer;
-    public float spawnInterval;
     public float spawnRange;
     public bool spawnerTurnedOn;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
+    //Enemy spawner scaling
+    public float baseSpawnInterval = 2.0f;
+    public float minSpawnInterval = 0.1f;
+    public float spawnIntervalScaling = 0.5f;
+
+    //Enemy scaling
     public float baseEnemyHealth = 50f;
     public float healthIncreasePerMinute = 10.0f;
     public int baseEnemyDamage = 5;
     public int damageIncreasePerMinute = 1;
 
-    // Update is called once per frame
+
     void Update()
     {
-        spawnTimer += Time.deltaTime;
-        if (spawnTimer >= spawnInterval && spawnerTurnedOn == true)
+        if (GameClock.Instance == null)
         {
+            Debug.LogError("GameClock instance not found, enemy spawn rate won't work");
+            return;
+        }
+
+        float currentTime = GameClock.Instance.ElapsedTime;
+        float currentSpawnInterval = Mathf.Max(
+            minSpawnInterval,
+            baseSpawnInterval - (spawnIntervalScaling / 60f * currentTime)
+        );
+
+
+
+        spawnTimer += Time.deltaTime;
+        if (spawnTimer >= currentSpawnInterval && spawnerTurnedOn == true)
+        {
+            Debug.Log(currentSpawnInterval);
             spawnTimer = 0;
             SpawnEnemy();
         }
