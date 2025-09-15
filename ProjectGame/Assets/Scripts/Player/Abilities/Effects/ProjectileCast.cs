@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Linq;
 
 [CreateAssetMenu(menuName = "Abilities/Effect/Projectile Cast")]
@@ -52,12 +52,19 @@ public class ProjectileCast : AbilityEffectBase
 
     private GameObject FindClosestEnemy(Vector2 origin)
     {
-        //Assumes enemies are tagged "Enemy"
+        //Finds enemies tagged "Enemy"
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (enemies.Length == 0) return null;
+        if (enemies.Length == 0)
+            return null;
 
-        return enemies
-            .OrderBy(e => Vector2.Distance(origin, e.transform.position))
-            .FirstOrDefault();
+        foreach (var e in enemies)
+            if (Vector2.Distance(origin, e.transform.position) < stats.ProjectileRange)
+            {
+                return enemies
+                    .OrderBy(e => Vector2.Distance(origin, e.transform.position))
+                    .FirstOrDefault();
+            }
+
+        return null;
     }
 }

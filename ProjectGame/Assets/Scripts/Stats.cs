@@ -8,8 +8,8 @@ public enum BuffType
     ProjectileDamage,
     AcidDamage,
     FireDamage,
-    AttackCooldown
-    //ProjectileRange
+    AttackCooldown,
+    ProjectileRange
 }
 public class Stats : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class Stats : MonoBehaviour
     [SerializeField] private int movementSpeed = 10;
     [SerializeField] private int meleeDamage = 10;
     [SerializeField] private int projectileDamage = 0;
-    [SerializeField] private int projectileRange = 0;
+    [SerializeField] private int projectileRange = 100;
     [SerializeField] private int acidDamage = 0;
     [SerializeField] private int fireDamage = 0;
     [SerializeField] private float attackCooldown = 0.5f;
@@ -55,9 +55,9 @@ public class Stats : MonoBehaviour
                 break;
                 //case BuffType.AttackCooldown:
 
-                // case BuffType.ProjectileRange:
-                //     projectileRange += valueDelta;
-                //     break;
+            case BuffType.ProjectileRange:
+                projectileRange += valueDelta;
+                break;
         }
     }
 }

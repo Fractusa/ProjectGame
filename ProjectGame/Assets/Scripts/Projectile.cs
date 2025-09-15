@@ -1,20 +1,27 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Projectile : MonoBehaviour
 {
     Rigidbody2D rb;
-    public int projectileDestructionRange = 100;
     private int damage;
+    Stats stats;
+    private Vector2 spawnPos;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        GameObject player = GameObject.FindWithTag("Player");
+        stats = player.GetComponent<Stats>();
+        spawnPos = transform.position;
     }
 
     void Update()
-    {
-        if(transform.position.magnitude > projectileDestructionRange)
+    {     
+        float distanceTraveled = Vector2.Distance(transform.position, spawnPos);
+
+        if (distanceTraveled > stats.ProjectileRange)
         {
             Destroy(gameObject);
         }
