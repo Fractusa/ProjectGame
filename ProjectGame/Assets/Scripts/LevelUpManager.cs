@@ -24,7 +24,8 @@ public class LevelUpManager : MonoBehaviour
 
         levelUpUI.SetActive(true);
 
-        //Add your own upgradecards to this list
+        //Add your upgrade cards to this list
+        //Needs to add random selection
         upgradeCards[0].Setup(this, BuffType.Health, 10, "Health Upgrade", "Increases max health by 10.");
         upgradeCards[1].Setup(this, BuffType.MeleeDamage, 5, "Melee Upgrade", "Increases melee dmg by 5.");
         upgradeCards[2].Setup(this, BuffType.MovementSpeed, 1, "Movement speed upgrade", "Increases movement speed by 1.");
