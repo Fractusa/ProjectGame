@@ -408,7 +408,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 138708862}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1117327720}
+        m_TargetAssemblyTypeName: UpgradeCard, Assembly-CSharp
+        m_MethodName: OnCardSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &138708862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,7 +1066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &341967267
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1506,6 +1518,7 @@ GameObject:
   - component: {fileID: 815039856}
   - component: {fileID: 815039858}
   - component: {fileID: 815039857}
+  - component: {fileID: 815039859}
   m_Layer: 5
   m_Name: UpgradeCard2
   m_TagString: Untagged
@@ -1573,6 +1586,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815039855}
   m_CullTransparentMesh: 1
+--- !u!114 &815039859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815039855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566b4bc9e2822fe4ca582bee26114b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeCard
+  titleText: {fileID: 781516536}
+  descriptionText: {fileID: 885530835}
 --- !u!1 &837512082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,6 +2028,7 @@ GameObject:
   - component: {fileID: 1117327717}
   - component: {fileID: 1117327719}
   - component: {fileID: 1117327718}
+  - component: {fileID: 1117327720}
   m_Layer: 5
   m_Name: UpgradeCard3
   m_TagString: Untagged
@@ -2068,6 +2096,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117327716}
   m_CullTransparentMesh: 1
+--- !u!114 &1117327720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117327716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566b4bc9e2822fe4ca582bee26114b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeCard
+  titleText: {fileID: 385279353}
+  descriptionText: {fileID: 244263250}
 --- !u!1 &1128361551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,6 +2369,7 @@ GameObject:
   - component: {fileID: 1415896703}
   - component: {fileID: 1415896702}
   - component: {fileID: 1415896705}
+  - component: {fileID: 1415896706}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2409,6 +2452,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CollectibleController
   experiencePrefab: {fileID: 5658820540263630409, guid: 8ee0046007778a940beb780b1282601e, type: 3}
   healthPrefab: {fileID: 5998754975683185711, guid: 604b552ac6d0f8d42a54d1378a0660dd, type: 3}
+--- !u!114 &1415896706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415896701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b45fa7eb8cbc247aabe83b421c8987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelUpManager
+  levelUpUI: {fileID: 341967266}
+  upgradeCards:
+  - {fileID: 1838923004}
+  - {fileID: 815039859}
+  - {fileID: 1117327720}
+  pauseMenu: {fileID: 837512085}
 --- !u!1 &1424962057
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,6 +2734,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 609854643817345431, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 1731498383}
+    - target: {fileID: 609854643817345431, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
+      propertyPath: levelUpManager
+      value: 
+      objectReference: {fileID: 1415896706}
     - target: {fileID: 1569894142473963075, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
       propertyPath: m_Size.y
       value: 0.34240764
@@ -2765,6 +2834,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6246336600257967269, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
   m_PrefabInstance: {fileID: 1731498376}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1731498383 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8284372614960483457, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
+  m_PrefabInstance: {fileID: 1731498376}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea3aec28ff0bbe43a77e4cdfc173ca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
 --- !u!1 &1809151595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3048,6 +3128,7 @@ GameObject:
   - component: {fileID: 1838923001}
   - component: {fileID: 1838923003}
   - component: {fileID: 1838923002}
+  - component: {fileID: 1838923004}
   m_Layer: 5
   m_Name: UpgradeCard1
   m_TagString: Untagged
@@ -3115,6 +3196,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838923000}
   m_CullTransparentMesh: 1
+--- !u!114 &1838923004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838923000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566b4bc9e2822fe4ca582bee26114b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeCard
+  titleText: {fileID: 67848631}
+  descriptionText: {fileID: 232879539}
 --- !u!1 &1847674794
 GameObject:
   m_ObjectHideFlags: 0
@@ -3197,7 +3292,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1847674797}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1838923004}
+        m_TargetAssemblyTypeName: UpgradeCard, Assembly-CSharp
+        m_MethodName: OnCardSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1847674797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3318,7 +3425,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2019167430}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 815039859}
+        m_TargetAssemblyTypeName: UpgradeCard, Assembly-CSharp
+        m_MethodName: OnCardSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2019167430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4126,6 +4245,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 229532112748371945, guid: 8ee0046007778a940beb780b1282601e, type: 3}
+      propertyPath: experienceAmount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2467983377509906497, guid: 8ee0046007778a940beb780b1282601e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5

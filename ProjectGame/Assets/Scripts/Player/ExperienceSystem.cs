@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class ExperienceSystem : MonoBehaviour
 {
+    public static ExperienceSystem Instance { get; private set; }
+    public LevelUpManager levelUpManager;
+    public Stats stats;
+
     [SerializeField] private int currentLevel = 0;
     [SerializeField] private int currentXP = 0;
     [SerializeField] private int xpToNextLevel = 10;
@@ -10,6 +14,17 @@ public class ExperienceSystem : MonoBehaviour
     public int CurrentXP => currentXP;
     public int XPToNextLevel => xpToNextLevel;
 
+    private void Awake()
+    {
+        // This is the core of the singleton pattern.
+        // It ensures there is only one instance of this class at any time.
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
     public void AddExperience(int amount)
     {
         currentXP += amount;
@@ -31,5 +46,12 @@ public class ExperienceSystem : MonoBehaviour
         Debug.Log("Levelled up: " + currentLevel);
 
         //Trigger upgrade UI pick
+        levelUpManager.ShowLevelUpUI();
+
+    }
+
+    public void ApplyUpgrade(BuffType type, int value) // apply upgrade once card is chosen.
+    {
+        stats.AddIntBuff(value, type);
     }
 }

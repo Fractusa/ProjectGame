@@ -10,6 +10,11 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        if (LevelUpManager.Instance != null && LevelUpManager.Instance.IsLevelingUp())
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
