@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e868f5f21484df34c8d906b5f76c12a0, type: 3}
+  m_Name: Projectile Cast
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectileCast
+  projectilePrefab: {fileID: 6785065688402368468, guid: 119881a9d1e4dc94c9bee0654666495f, type: 3}
+  projectileSpeed: 300

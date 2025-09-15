@@ -8,7 +8,7 @@ public class ExpCollectible : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             ExperienceSystem experienceSystem = other.GetComponent<ExperienceSystem>();
-            PlayerController player = other.GetComponent<PlayerController>();
+            
             experienceSystem.AddExperience(experienceAmount);
 
             Debug.Log("Exp: " + experienceSystem.CurrentXP);
