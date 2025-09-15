@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     Vector2 move;
     Vector2 moveDirection = new(1, 0);
     [SerializeField] private Stats playerStats;
-
     public List<AbilityData> abilities;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,7 +25,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerStats = GetComponent<Stats>();
-        //data = GetComponent<AbilityData>();
+
+        foreach (var a in abilities)
+            a.OnSetup(gameObject);
     }
 
     // Update is called once per frame
@@ -53,11 +54,6 @@ public class PlayerController : MonoBehaviour
 
         foreach(AbilityData a in abilities)
             a.OnUse(gameObject);
-        // if (Input.GetMouseButtonDown(0))
-        // {
-        //     Launch();
-        // }
-
     }
 
     void FixedUpdate()
@@ -65,34 +61,4 @@ public class PlayerController : MonoBehaviour
         Vector2 position = (Vector2)rb.position + move * playerStats.MovementSpeed * Time.deltaTime;
         rb.MovePosition(position);
     }
-
-    // void Launch()
-    // {
-    //     //Finds the mouse position, supplies a z value and then converts from screen space to world space before calculating the shot direction
-    //     //The shot direction is then normalized, since we are only interested in the general direction to launch the projectile at
-    //     Vector3 mousePos = Input.mousePosition;
-    //     mousePos.z = Camera.main.nearClipPlane;
-    //     mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-    //     Vector3 shootDir = (mousePos - transform.position).normalized;
-    //     float angle = Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg;
-
-    //     if (fireballPrefab != null)
-    //     {
-    //         GameObject fireballObject = Instantiate(fireballPrefab, rb.position + Vector2.up * 0.5f, Quaternion.identity);
-    //         Projectile proj = fireballObject.GetComponent<Projectile>();
-    //         fireballObject.transform.rotation = Quaternion.Euler(0, 0, angle);
-    //         proj.Launch(shootDir, projectileForce, playerStats.ProjectileDamage);
-    //     }
-    //     else if (acidballPrefab != null)
-    //     {
-    //         //Acidball logic (similar to above)
-    //     }
-    //     else if (arrowPrefab != null)
-    //     {
-    //         //Arrow logic (similar to above)
-    //     }
-
-    //     //animator.SetTrigger("Launch");
-    // }
-
 }

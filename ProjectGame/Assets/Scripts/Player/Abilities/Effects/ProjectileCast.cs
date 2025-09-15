@@ -6,24 +6,28 @@ public class ProjectileCast : AbilityEffectBase
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float projectileSpeed = 500f;
+    Stats stats;
+    AbilityState state;
+    Rigidbody2D playerRb;
 
     public override void OnCleanup(GameObject owner)
     {
-        throw new System.NotImplementedException();
+        throw new System.NotImplementedException();       
     }
 
     public override void OnSetup(GameObject owner)
     {
-        throw new System.NotImplementedException();
+        stats = owner.GetComponent<Stats>();
+        state = owner.GetComponent<AbilityState>();
+        playerRb = owner.GetComponent<Rigidbody2D>();
     }
 
     public override void OnUse(GameObject owner)
     {
         GameObject closestEnemy = FindClosestEnemy(owner.transform.position);
         if (closestEnemy == null) return;
-        Stats stats = owner.GetComponent<Stats>();
+        
         //Finds the AbilityState component from the owner, if it doesn't exist assigns it to the owner.
-        AbilityState state = owner.GetComponent<AbilityState>();
         if (state == null) state = owner.AddComponent<AbilityState>();
 
         //Find shoot direction and calculate angle
@@ -31,8 +35,7 @@ public class ProjectileCast : AbilityEffectBase
         float angle = Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg;
 
         //Spawns the projectile positioned closer towards the top middle of caster
-        Rigidbody2D rb = owner.GetComponent<Rigidbody2D>();
-        Vector2 spawnPos = rb.position + Vector2.up * 0.5f;
+        Vector2 spawnPos = playerRb.position + Vector2.up * 0.5f;
 
         if (Time.time >= state.LastAttackTime + stats.AttackCooldown)
         {
