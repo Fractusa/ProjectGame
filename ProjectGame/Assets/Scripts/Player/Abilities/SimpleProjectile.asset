@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: SimpleProjectile
   m_EditorClassIdentifier: Assembly-CSharp::AbilityData
   abilityName: SimpleProjectile
-  effects: []
+  effects:
+  - {fileID: 11400000, guid: f7655a0e27046db49a6ca7a67990f7d1, type: 2}
