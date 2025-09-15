@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
@@ -6,11 +7,13 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject enemyPrefab;
     public Transform player;
+    public TextMeshProUGUI enemyCountText;
 
     //Enemy spawner settings
     private float spawnTimer;
     public float spawnRange;
     public bool spawnerTurnedOn;
+    public Transform enemyParent;
 
     //Enemy spawner scaling
     public float baseSpawnInterval = 2.0f;
@@ -23,9 +26,19 @@ public class EnemySpawner : MonoBehaviour
     public int baseEnemyDamage = 5;
     public int damageIncreasePerMinute = 1;
 
-
+    void Start()
+    {
+        // Optional: If you don't assign an enemyParent in the Inspector,
+        // this will create a new GameObject to hold all enemies
+        if (enemyParent == null)
+        {
+            GameObject parent = new GameObject("Enemies");
+            enemyParent = parent.transform;
+        }
+    }
     void Update()
     {
+        enemyCountText.text = $"Enemies: {enemyParent.childCount}";
         if (GameClock.Instance == null)
         {
             Debug.LogError("GameClock instance not found, enemy spawn rate won't work");
@@ -43,7 +56,6 @@ public class EnemySpawner : MonoBehaviour
         spawnTimer += Time.deltaTime;
         if (spawnTimer >= currentSpawnInterval && spawnerTurnedOn == true)
         {
-            Debug.Log(currentSpawnInterval);
             spawnTimer = 0;
             SpawnEnemy();
         }
@@ -52,7 +64,7 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnEnemy()
     {
         Vector2 spawnPos = GetSpawnPosition(player.transform, spawnRange);
-        GameObject newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+        GameObject newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity, enemyParent);
 
         EnemyHealth enemyHealth = newEnemy.GetComponent<EnemyHealth>();
         EnemyDamage enemyDamage = newEnemy.GetComponent<EnemyDamage>();
@@ -64,6 +76,7 @@ public class EnemySpawner : MonoBehaviour
             enemyHealth.Setup(baseEnemyHealth, healthIncreasePerMinute);
             enemyDamage.Setup(baseEnemyDamage, damageIncreasePerMinute);
         }
+
     }
 
 
