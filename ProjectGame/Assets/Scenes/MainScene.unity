@@ -151,9 +151,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyPrefab: {fileID: 275618474423837546, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
   player: {fileID: 1731498377}
-  spawnInterval: 2
   spawnRange: 20
   spawnerTurnedOn: 1
+  baseSpawnInterval: 2
+  minSpawnInterval: 0.1
+  spawnIntervalScaling: 0.5
   baseEnemyHealth: 50
   healthIncreasePerMinute: 10
   baseEnemyDamage: 5
