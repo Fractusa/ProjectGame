@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     private int damage;
     Stats stats;
     private Vector2 spawnPos;
+    private bool hasHit = false;
 
     void Awake()
     {
@@ -35,7 +36,10 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Enemy"))
+        if (hasHit)
+            return;
+
+        if (other.CompareTag("Enemy"))
         {
             EnemyHealth enemy = other.GetComponent<EnemyHealth>();
             if (enemy != null)
@@ -44,8 +48,11 @@ public class Projectile : MonoBehaviour
 
                 enemy.TakeDamage(dmg);
             }
+
+            hasHit = true;
+            Destroy(gameObject);
+                
         }
-        Destroy(gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D other)
