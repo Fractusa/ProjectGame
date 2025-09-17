@@ -59,12 +59,12 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 position = rb.position + move * playerStats.MovementSpeed * Time.deltaTime;
+        Vector2 position = rb.position + move * playerStats.MovementSpeed * Time.fixedDeltaTime;
         rb.MovePosition(position);
 
         //Calculates the velocity (change in Rigidbody position) of the Player used in Projectile, to take Players velocity into consideration,
         //before launching projectile towards Enemy. This should help with keeping projectiles moving towards enemies, and minimizes enemies dodging.
-        CurrentVelocity = (position - previousPosition) / Time.deltaTime;
+        CurrentVelocity = (position - previousPosition) / Time.fixedDeltaTime;
         previousPosition = position;
     }
 }
