@@ -30,6 +30,63 @@ public class Stats : MonoBehaviour
     public int FireDamage => fireDamage;
     public int ProjectileRange => projectileRange;
     public float AttackCooldown => attackCooldown;
+    
+
+    // This method applies a buff based on the selected upgrade
+    public void ApplyBuff(UpgradeCardData upgrade)
+    {
+        switch (upgrade.buffType)
+        {
+            case BuffType.Health:
+                if (upgrade.valueType == UpgradeCardData.ValueType.Flat)
+                    maxHealth += Mathf.RoundToInt(upgrade.value);
+                else
+                    maxHealth += Mathf.RoundToInt(maxHealth * (upgrade.value / 100f));
+                break;
+            case BuffType.MovementSpeed:
+                if (upgrade.valueType == UpgradeCardData.ValueType.Flat)
+                    movementSpeed += Mathf.RoundToInt(upgrade.value);
+                else
+                    movementSpeed += Mathf.RoundToInt(movementSpeed * (upgrade.value / 100f));
+                break;
+            case BuffType.MeleeDamage:
+                if (upgrade.valueType == UpgradeCardData.ValueType.Flat)
+                    meleeDamage += Mathf.RoundToInt(upgrade.value);
+                else
+                    meleeDamage += Mathf.RoundToInt(meleeDamage * (upgrade.value / 100f));
+                break;
+            case BuffType.ProjectileDamage:
+                if (upgrade.valueType == UpgradeCardData.ValueType.Flat)
+                    projectileDamage += Mathf.RoundToInt(upgrade.value);
+                else
+                    projectileDamage += Mathf.RoundToInt(projectileDamage * (upgrade.value / 100f));
+                break;
+            case BuffType.AcidDamage:
+                if (upgrade.valueType == UpgradeCardData.ValueType.Flat)
+                    acidDamage += Mathf.RoundToInt(upgrade.value);
+                else
+                    acidDamage += Mathf.RoundToInt(acidDamage * (upgrade.value / 100f));
+                break;
+            case BuffType.FireDamage:
+                if (upgrade.valueType == UpgradeCardData.ValueType.Flat)
+                    fireDamage += Mathf.RoundToInt(upgrade.value);
+                else
+                    fireDamage += Mathf.RoundToInt(fireDamage * (upgrade.value / 100f));
+                break;
+            case BuffType.ProjectileRange:
+                if (upgrade.valueType == UpgradeCardData.ValueType.Flat)
+                    projectileRange += Mathf.RoundToInt(upgrade.value);
+                else
+                    projectileRange += Mathf.RoundToInt(projectileRange * (upgrade.value / 100f));
+                break;
+            case BuffType.AttackCooldown:
+                if (upgrade.valueType == UpgradeCardData.ValueType.Flat)
+                    attackCooldown += upgrade.value;
+                else
+                    attackCooldown += attackCooldown * (upgrade.value / 100f);
+                break;
+        }
+    }
 
     public void AddIntBuff(int valueDelta, BuffType type)
     {
@@ -53,7 +110,7 @@ public class Stats : MonoBehaviour
             case BuffType.FireDamage:
                 fireDamage += valueDelta;
                 break;
-                //case BuffType.AttackCooldown:
+            //case BuffType.AttackCooldown:
 
             case BuffType.ProjectileRange:
                 projectileRange += valueDelta;

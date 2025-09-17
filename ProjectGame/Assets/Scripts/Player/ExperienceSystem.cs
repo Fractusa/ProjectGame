@@ -49,9 +49,4 @@ public class ExperienceSystem : MonoBehaviour
         levelUpManager.ShowLevelUpUI();
 
     }
-
-    public void ApplyUpgrade(BuffType type, int value) // apply upgrade once card is chosen.
-    {
-        stats.AddIntBuff(value, type);
-    }
 }
