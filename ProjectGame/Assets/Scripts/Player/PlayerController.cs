@@ -8,10 +8,6 @@ public class PlayerController : MonoBehaviour
 {
     public InputAction MoveAction;
     Animator animator;
-    public GameObject fireballPrefab;
-    public GameObject acidballPrefab;
-    public GameObject arrowPrefab;
-    public float projectileForce = 300;
     Rigidbody2D rb;
     Vector2 move;
     Vector2 moveDirection = new(1, 0);
@@ -55,15 +51,19 @@ public class PlayerController : MonoBehaviour
         else
             animator.SetBool("isMoving", false);
 
-        foreach(AbilityData a in abilities)
+        //Iterates over every Ability assigned to the player, and runs the OnUse function, which in turn runs the attached Effects' OnUse function,
+        //effectively using the Ability. This allows each Ability to run as many effects as desired.
+        foreach (AbilityData a in abilities)
             a.OnUse(gameObject);
     }
 
     void FixedUpdate()
     {
-        Vector2 position = (Vector2)rb.position + move * playerStats.MovementSpeed * Time.deltaTime;
+        Vector2 position = rb.position + move * playerStats.MovementSpeed * Time.deltaTime;
         rb.MovePosition(position);
 
+        //Calculates the velocity (change in Rigidbody position) of the Player used in Projectile, to take Players velocity into consideration,
+        //before launching projectile towards Enemy. This should help with keeping projectiles moving towards enemies, and minimizes enemies dodging.
         CurrentVelocity = (position - previousPosition) / Time.deltaTime;
         previousPosition = position;
     }

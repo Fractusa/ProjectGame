@@ -40,7 +40,7 @@ public class ExperienceSystem : MonoBehaviour
     {
         currentXP -= xpToNextLevel;
         currentLevel++;
-        //Increases XP to next level på 10%
+        //Increases XP to next level by 10%
         xpToNextLevel = Mathf.RoundToInt(xpToNextLevel * 1.10f);
 
         Debug.Log("Levelled up: " + currentLevel);

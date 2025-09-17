@@ -8,7 +8,8 @@ public class Projectile : MonoBehaviour
     private int damage;
     Stats stats;
     private Vector2 spawnPos;
-    //private bool hasHit = false;
+
+    //Populated through ScriptableObjects (Projectile Effects) being attached to the Ability
     private ProjectileEffectBase[] effects;
 
     void Awake()
@@ -40,6 +41,9 @@ public class Projectile : MonoBehaviour
 
     public void SetEffects(ProjectileEffectBase[] newEffects)
     {
+        if (newEffects == null)
+            return;
+
         effects = newEffects;
     }
 

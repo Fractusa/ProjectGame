@@ -8,18 +8,22 @@ public class AbilityData : ScriptableObject, IAbilityData
     [SerializeField] private AbilityAttackEffectBase[] effects;
     [SerializeField] private ProjectileEffectBase[] projectileEffects;
 
+    //Logic to be run whenever an effect is removed from the ability
     public void OnCleanup(GameObject owner)
     {
         foreach (var e in effects)
             e.OnCleanup(owner);
     }
 
+    //Logic to be run whenever an effect is first added to the ability
     public void OnSetup(GameObject owner)
     {
         foreach (var e in effects)
             e.OnSetup(owner);
     }
 
+    //Logic to be run when the ability is used - done automatically via PlayerController in Update()
+    //projectileEffects are passed through here, to enable applying effects to Projectile object rather than Player object
     public void OnUse(GameObject owner)
     {
         foreach (var e in effects)
