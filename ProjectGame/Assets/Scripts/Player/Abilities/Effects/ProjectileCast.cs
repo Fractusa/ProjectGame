@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Linq;
 
-[CreateAssetMenu(menuName = "Abilities/Effect/Projectile Cast")]
+[CreateAssetMenu(menuName = "Abilities/Attack Effect/Projectile Cast")]
 public class ProjectileCast : AbilityAttackEffectBase
 {
     [SerializeField] private GameObject projectilePrefab;
