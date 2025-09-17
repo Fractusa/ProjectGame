@@ -163,8 +163,8 @@ MonoBehaviour:
   maxHealth: 1000
   healthSpawnChance: 0.5
   healthBar: {fileID: 0}
-  experiencePrefab: {fileID: 0}
-  healthPrefab: {fileID: 0}
+  experiencePrefab: {fileID: 5658820540263630409, guid: 8ee0046007778a940beb780b1282601e, type: 3}
+  healthPrefab: {fileID: 5998754975683185711, guid: 604b552ac6d0f8d42a54d1378a0660dd, type: 3}
 --- !u!61 &1013033714426767430
 BoxCollider2D:
   m_ObjectHideFlags: 0

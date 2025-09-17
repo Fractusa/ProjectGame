@@ -34,7 +34,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void Setup(float baseHealth, float healthIncreasePerMinute)
+    public void Setup(float baseHealth, float healthScalingRate)
     {
         if (GameClock.Instance == null)
         {
@@ -44,7 +44,8 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             float currentTime = GameClock.Instance.ElapsedTime;
-            maxHealth = (int)(baseHealth + (healthIncreasePerMinute / 60f * currentTime));
+            float scaledHealth = baseHealth + (baseHealth * (healthScalingRate / 100f) * (currentTime / 60f));
+            maxHealth = Mathf.RoundToInt(scaledHealth);
         }
 
         currentHealth = maxHealth;

@@ -1,11 +1,20 @@
 using TMPro;
-using UnityEditor;
 using UnityEngine;
+
+
+[System.Serializable]
+public class EnemySpawnData
+{
+    public GameObject enemyPrefab;
+    [Range(0, 100)] public int weight;
+}
+
+
 
 public class EnemySpawner : MonoBehaviour
 {
+    public EnemySpawnData[] enemySpawnData;
 
-    public GameObject enemyPrefab;
     public Transform player;
     public TextMeshProUGUI enemyCountText;
 
@@ -21,10 +30,8 @@ public class EnemySpawner : MonoBehaviour
     public float spawnIntervalScaling = 0.5f;
 
     //Enemy scaling
-    public float baseEnemyHealth = 50f;
-    public float healthIncreasePerMinute = 10.0f;
-    public int baseEnemyDamage = 5;
-    public int damageIncreasePerMinute = 1;
+    public float healthScalingRate = 10.0f; //Percentage increase per minute
+    public float damageScalingRate = 10.0f; //Percentage increase per minute
 
     void Start()
     {
@@ -57,25 +64,53 @@ public class EnemySpawner : MonoBehaviour
         if (spawnTimer >= currentSpawnInterval && spawnerTurnedOn == true)
         {
             spawnTimer = 0;
-            SpawnEnemy();
+            SpawnRandomEnemy();
         }
     }
 
-    private void SpawnEnemy()
+    private void SpawnRandomEnemy()
     {
-        Vector2 spawnPos = GetSpawnPosition(player.transform, spawnRange);
-        GameObject newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity, enemyParent);
-
-        EnemyHealth enemyHealth = newEnemy.GetComponent<EnemyHealth>();
-        EnemyDamage enemyDamage = newEnemy.GetComponent<EnemyDamage>();
-
-
-        if (enemyHealth != null && enemyDamage != null)
+        //Calculates the total weight of all enemies in the enemy list
+        int totalWeight = 0;
+        foreach (var enemy in enemySpawnData)
         {
-            // Set the enemy's base stats here, the enemy will scale itself
-            enemyHealth.Setup(baseEnemyHealth, healthIncreasePerMinute);
-            enemyDamage.Setup(baseEnemyDamage, damageIncreasePerMinute);
+            totalWeight += enemy.weight;
         }
+
+        int randomNumber = Random.Range(0, totalWeight); //Picks a random number between 0 and the total weight
+
+        GameObject enemyToSpawn = null;
+        foreach (var enemy in enemySpawnData)
+        {
+            if (randomNumber < enemy.weight)
+            {
+                enemyToSpawn = enemy.enemyPrefab;
+                break;
+            }
+            randomNumber -= enemy.weight;
+        }
+
+        if (enemyToSpawn != null)
+        {
+            Vector2 spawnPos = GetSpawnPosition(player.transform, spawnRange);
+            GameObject newEnemy = Instantiate(enemyToSpawn, spawnPos, Quaternion.identity, enemyParent);
+
+            EnemyHealth enemyHealth = newEnemy.GetComponent<EnemyHealth>();
+            EnemyDamage enemyDamage = newEnemy.GetComponent<EnemyDamage>();
+
+            if (enemyHealth != null && enemyDamage != null)
+            {
+                // Set the enemy's base stats here, the enemy will scale itself
+                enemyHealth.Setup(enemyHealth.maxHealth, healthScalingRate);
+                enemyDamage.Setup(enemyDamage.damageAmount, damageScalingRate);
+            }
+        }
+
+
+
+
+
+    
 
     }
 

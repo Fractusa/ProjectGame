@@ -285,7 +285,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb544f835c21db47886e8742ce69b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  enemyPrefab: {fileID: 275618474423837546, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
+  enemySpawnData:
+  - enemyPrefab: {fileID: 275618474423837546, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
+    weight: 10
+  - enemyPrefab: {fileID: 5609409139553557781, guid: df871c55d26829b478d5a53da1559210, type: 3}
+    weight: 1
   player: {fileID: 1731498377}
   enemyCountText: {fileID: 1809151597}
   spawnRange: 20
