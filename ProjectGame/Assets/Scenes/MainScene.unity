@@ -3167,7 +3167,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -253.5, y: 0}
+  m_AnchoredPosition: {x: -253.49997, y: 0}
   m_SizeDelta: {x: -6.9999695, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1838923002
@@ -4043,6 +4043,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5335616923452202424, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
+      propertyPath: attackRange
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5335616923452202424, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
       propertyPath: attackDamage
       value: -1
       objectReference: {fileID: 0}
@@ -4066,7 +4070,8 @@ PrefabInstance:
       propertyPath: m_AngularDamping
       value: 0.05
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3415859521564642985, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
