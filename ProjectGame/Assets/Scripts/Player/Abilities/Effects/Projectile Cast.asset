@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Projectile Cast
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileCast
   projectilePrefab: {fileID: 6785065688402368468, guid: 119881a9d1e4dc94c9bee0654666495f, type: 3}
-  projectileSpeed: 300
+  projectileSpeed: 600
