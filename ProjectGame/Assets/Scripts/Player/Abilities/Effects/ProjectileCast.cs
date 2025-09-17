@@ -2,7 +2,7 @@
 using System.Linq;
 
 [CreateAssetMenu(menuName = "Abilities/Effect/Projectile Cast")]
-public class ProjectileCast : AbilityEffectBase
+public class ProjectileCast : AbilityAttackEffectBase
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float projectileSpeed = 500f;
