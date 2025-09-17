@@ -8,7 +8,8 @@ public class Projectile : MonoBehaviour
     private int damage;
     Stats stats;
     private Vector2 spawnPos;
-    private bool hasHit = false;
+    //private bool hasHit = false;
+    private ProjectileEffectBase[] effects;
 
     void Awake()
     {
@@ -19,7 +20,7 @@ public class Projectile : MonoBehaviour
     }
 
     void Update()
-    {     
+    {
         float distanceTraveled = Vector2.Distance(transform.position, spawnPos);
 
         if (distanceTraveled > stats.ProjectileRange)
@@ -34,24 +35,17 @@ public class Projectile : MonoBehaviour
         rb.AddForce(direction.normalized * force);
     }
 
+    public void SetEffects(ProjectileEffectBase[] newEffects)
+    {
+        effects = newEffects;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (hasHit)
-            return;
-
         if (other.CompareTag("Enemy"))
-        {
-            EnemyHealth enemy = other.GetComponent<EnemyHealth>();
-            if (enemy != null)
-            {
-                DamageInfo dmg = new DamageInfo(damage, DamageType.Physical, DamageSource.Weapon);
-
-                enemy.TakeDamage(dmg);
-            }
-
-            hasHit = true;
-            Destroy(gameObject);
-                
+        { 
+            foreach (var effect in effects)
+                effect.OnHit(gameObject, other, stats.ProjectileDamage);
         }
     }
 

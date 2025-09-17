@@ -22,7 +22,7 @@ public class ProjectileCast : AbilityEffectBase
         playerRb = owner.GetComponent<Rigidbody2D>();
     }
 
-    public override void OnUse(GameObject owner)
+    public override void OnUse(GameObject owner, ProjectileEffectBase[] projectileEffects = null)
     {
         GameObject closestEnemy = FindClosestEnemy(owner.transform.position);
         if (closestEnemy == null) return;
@@ -44,9 +44,14 @@ public class ProjectileCast : AbilityEffectBase
             //Rotate projectile to face correct direction
             projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
             Projectile proj = projectile.GetComponent<Projectile>();
-            
+
             if (proj != null)
-                proj.Launch(shootDir, projectileSpeed, stats.ProjectileDamage); 
+                proj.Launch(shootDir, projectileSpeed, stats.ProjectileDamage);
+
+            if (projectileEffects != null)
+            {
+                proj.SetEffects(projectileEffects);
+            }
         }                    
     }
 

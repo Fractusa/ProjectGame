@@ -6,6 +6,7 @@ public class AbilityData : ScriptableObject, IAbilityData
     [SerializeField] private string abilityName;
     public string Name => abilityName;
     [SerializeField] private AbilityEffectBase[] effects;
+    [SerializeField] private ProjectileEffectBase[] projectileEffects;
 
     public void OnCleanup(GameObject owner)
     {
@@ -22,6 +23,6 @@ public class AbilityData : ScriptableObject, IAbilityData
     public void OnUse(GameObject owner)
     {
         foreach (var e in effects)
-            e.OnUse(owner);
+            e.OnUse(owner, projectileEffects);
     }
 }

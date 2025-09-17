@@ -15,3 +15,6 @@ MonoBehaviour:
   abilityName: SimpleProjectile
   effects:
   - {fileID: 11400000, guid: f7655a0e27046db49a6ca7a67990f7d1, type: 2}
+  projectileEffects:
+  - {fileID: 11400000, guid: 5fe832b6cf8234d4c9a0b1806422173e, type: 2}
+  - {fileID: 11400000, guid: 84100c688d95e164db2829f24c7d93ea, type: 2}
