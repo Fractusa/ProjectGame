@@ -9,10 +9,11 @@ public class ProjectileCast : AbilityAttackEffectBase
     Stats stats;
     AbilityState state;
     Rigidbody2D playerRb;
+    PlayerController playerController;
 
     public override void OnCleanup(GameObject owner)
     {
-        throw new System.NotImplementedException();       
+        throw new System.NotImplementedException();
     }
 
     public override void OnSetup(GameObject owner)
@@ -20,6 +21,7 @@ public class ProjectileCast : AbilityAttackEffectBase
         stats = owner.GetComponent<Stats>();
         state = owner.GetComponent<AbilityState>();
         playerRb = owner.GetComponent<Rigidbody2D>();
+        playerController = owner.GetComponent<PlayerController>();
     }
 
     public override void OnUse(GameObject owner, ProjectileEffectBase[] projectileEffects = null)
@@ -46,7 +48,10 @@ public class ProjectileCast : AbilityAttackEffectBase
             Projectile proj = projectile.GetComponent<Projectile>();
 
             if (proj != null)
-                proj.Launch(shootDir, projectileSpeed, stats.ProjectileDamage);
+            {
+                Vector2 playerVelocity = playerController.CurrentVelocity;
+                proj.Launch(shootDir, projectileSpeed, stats.ProjectileDamage, playerVelocity);
+            }
 
             if (projectileEffects != null)
             {

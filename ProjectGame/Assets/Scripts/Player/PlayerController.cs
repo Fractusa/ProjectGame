@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     Vector2 moveDirection = new(1, 0);
     [SerializeField] private Stats playerStats;
     public List<AbilityData> abilities;
+    Vector2 previousPosition;
+    public Vector2 CurrentVelocity { get; private set; }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerStats = GetComponent<Stats>();
+        previousPosition = rb.position;
 
         foreach (var a in abilities)
             a.OnSetup(gameObject);
@@ -60,5 +63,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 position = (Vector2)rb.position + move * playerStats.MovementSpeed * Time.deltaTime;
         rb.MovePosition(position);
+
+        CurrentVelocity = (position - previousPosition) / Time.deltaTime;
+        previousPosition = position;
     }
 }

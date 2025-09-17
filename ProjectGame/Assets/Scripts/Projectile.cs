@@ -29,10 +29,13 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void Launch(Vector2 direction, float force, int damageValue)
+    public void Launch(Vector2 direction, float speed, int damageValue, Vector2 playerVelocity)
     {
         damage = damageValue;
-        rb.AddForce(direction.normalized * force);
+        spawnPos = rb.position;
+
+        Vector2 baseVelocity = direction.normalized * speed;
+        rb.AddForce(baseVelocity + playerVelocity);
     }
 
     public void SetEffects(ProjectileEffectBase[] newEffects)
