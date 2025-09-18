@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour
 {
 
     public int maxHealth = 100;
-    private int currentHealth;
+    public int currentHealth;
     [SerializeField] float healthSpawnChance = 0.1f;
     private Animator animator;
     public HealthBar healthBar; //Add a public reference to the HealtBar script
@@ -44,7 +44,7 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             float currentTime = GameClock.Instance.ElapsedTime;
-            float scaledHealth = baseHealth + (baseHealth * (healthScalingRate / 100f) * (currentTime / 60f));
+            float scaledHealth = baseHealth + (int)baseHealth / 60f * currentTime;
             maxHealth = Mathf.RoundToInt(scaledHealth);
         }
 

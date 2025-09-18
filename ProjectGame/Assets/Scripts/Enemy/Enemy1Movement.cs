@@ -42,7 +42,6 @@ public class Enemy1Movement : MonoBehaviour
             {
                 //If not within attack range moves towards the player
                 Vector2 direction = (player.position - transform.position).normalized; //We normalize here to make the speed constant
-                //rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
 
                 animator.SetBool("IsMoving", true); //Starts walking animation
