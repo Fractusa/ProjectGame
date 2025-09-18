@@ -9,7 +9,8 @@ public enum BuffType
     AcidDamage,
     FireDamage,
     AttackCooldown,
-    ProjectileRange
+    ProjectileRange,
+    Luck
 }
 public class Stats : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Stats : MonoBehaviour
     [SerializeField] private int acidDamage = 0;
     [SerializeField] private int fireDamage = 0;
     [SerializeField] private float attackCooldown = 0.5f;
+    [SerializeField] private int luck = 0;
 
     public int MaxHealth => maxHealth;
     public int MovementSpeed => movementSpeed;
@@ -30,7 +32,8 @@ public class Stats : MonoBehaviour
     public int FireDamage => fireDamage;
     public int ProjectileRange => projectileRange;
     public float AttackCooldown => attackCooldown;
-    
+    public int Luck => luck;
+
 
     // This method applies a buff based on the selected upgrade
     public void ApplyBuff(UpgradeCardData upgrade)
@@ -85,10 +88,16 @@ public class Stats : MonoBehaviour
                 else
                     attackCooldown += attackCooldown * (upgrade.value / 100f);
                 break;
+            case BuffType.Luck:
+                if (upgrade.valueType == UpgradeCardData.ValueType.Flat)
+                    luck += Mathf.RoundToInt(upgrade.value);
+                else
+                    luck += Mathf.RoundToInt(luck * (upgrade.value / 100f));
+                break;
         }
     }
 
-    public void AddIntBuff(int valueDelta, BuffType type)
+    /*public void AddIntBuff(int valueDelta, BuffType type)
     {
         switch (type)
         {
@@ -116,5 +125,5 @@ public class Stats : MonoBehaviour
                 projectileRange += valueDelta;
                 break;
         }
-    }
+    }*/
 }

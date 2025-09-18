@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88bcd17accfcbd447aa5b2de30053c69, type: 3}
-  m_Name: 5 Flat melee dmg upgrade card
+  m_Name: Rare Health Percentage Card
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCardData
-  title: Melee upgrade
-  description: Upgrades melee damage by a flat value
-  buffType: 2
-  valueType: 0
-  value: 5
+  title: Health Upgrade
+  description: A percentage increase to your maximum health
+  buffType: 0
+  rarity: 2
+  valueType: 1
+  value: 15

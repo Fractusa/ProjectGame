@@ -1184,10 +1184,41 @@ MonoBehaviour:
   levelUpUI: {fileID: 3819636666374554848}
   cardSpawnParent: {fileID: 233703326}
   allAvailabledUpgrades:
-  - {fileID: 11400000, guid: 3de1cd04d4aa7be4ebade0cf6d75a1d7, type: 2}
-  - {fileID: 11400000, guid: ab31c07ea8fc7a546bb008434165219a, type: 2}
-  - {fileID: 11400000, guid: 340c9673917d62c45b8a2254c4dfba6c, type: 2}
-  - {fileID: 11400000, guid: 8ab2668e2b9ab504895f76d862373b8b, type: 2}
+  - {fileID: 11400000, guid: 6ec7302d0d553514ca84cc17e34d839d, type: 2}
+  - {fileID: 11400000, guid: c6cf4044a85c2a34a9aed869d11c4c40, type: 2}
+  - {fileID: 11400000, guid: 4fa4e9b4649def54684891afe215fa99, type: 2}
+  - {fileID: 11400000, guid: 079cb6693cff49e498b5d23bd6a64f83, type: 2}
+  - {fileID: 11400000, guid: e072a8e2c4fff6b49bc9422093d069fe, type: 2}
+  - {fileID: 11400000, guid: 1d01cf694e9966940bd74fb02461a7c6, type: 2}
+  - {fileID: 11400000, guid: 36035ed3fb7fbb842ae51d488e85fa3b, type: 2}
+  - {fileID: 11400000, guid: 17b81fc13ea39154bbeea39f68b5caa9, type: 2}
+  - {fileID: 11400000, guid: 00848c6062c249e45ae7b408a9cc95b4, type: 2}
+  - {fileID: 11400000, guid: 95d1896c4090997469b1dba7954f7411, type: 2}
+  - {fileID: 11400000, guid: 07944e327f2cbc94aa0ff4f3d1404288, type: 2}
+  - {fileID: 11400000, guid: df5f1f4ccb9761944b7be92a9272bf2a, type: 2}
+  - {fileID: 11400000, guid: e4c5449e0feb1844a94937f09903a376, type: 2}
+  - {fileID: 11400000, guid: 0e1d9edcb4b32674aaaf454cb4c5fad9, type: 2}
+  - {fileID: 11400000, guid: 0fdb6f1c4ac9837469a3fbcdb7e318d1, type: 2}
+  - {fileID: 11400000, guid: e3b5918f7773b844fab8912c2d10def1, type: 2}
+  - {fileID: 11400000, guid: e422bc60c7503084ebb9493507fd1c9d, type: 2}
+  - {fileID: 11400000, guid: 032854f4399b79f4198e66c59e977977, type: 2}
+  - {fileID: 11400000, guid: 82c41ac1456493c4c82f05d3f3ce0435, type: 2}
+  - {fileID: 11400000, guid: ab12054be2d6e03469ce15721a7c76ef, type: 2}
+  - {fileID: 11400000, guid: b5a8166f529a1bf4b87f301e211cc796, type: 2}
+  - {fileID: 11400000, guid: f8945ec680ab4774d9a36c7456d1e4d4, type: 2}
+  - {fileID: 11400000, guid: 49016b224ac55ff4cb7c17c7ecac9db9, type: 2}
+  - {fileID: 11400000, guid: 8b42804f6ccb32a47b381f205047d1bc, type: 2}
+  - {fileID: 11400000, guid: 2c20dfe6e46ebf646841eb0b84d06a5e, type: 2}
+  - {fileID: 11400000, guid: 6b8d3e7bbaa8b0446bee0e613cf99a84, type: 2}
+  - {fileID: 11400000, guid: 03ae83dbc99d9bd4ca0aef2741dfe03f, type: 2}
+  - {fileID: 11400000, guid: aa6efb2dd28a68e4a86384c14ac8491f, type: 2}
+  - {fileID: 11400000, guid: 46855b8c240bff6428c304295deade9d, type: 2}
+  - {fileID: 11400000, guid: 6697f48a831d35b4d87142f087481fa3, type: 2}
+  - {fileID: 11400000, guid: d8443de00ca990442be98a24cbe6a7ce, type: 2}
+  - {fileID: 11400000, guid: acca98bbf13a0db4ea262eb3ada95e97, type: 2}
+  - {fileID: 11400000, guid: 20ba3d6ad6d1249499d02c0a06fcea53, type: 2}
+  - {fileID: 11400000, guid: f08b52684cc282f47b81deba1a13ef30, type: 2}
+  - {fileID: 11400000, guid: c9f42fdb313f3f540b78341f9832318e, type: 2}
   upgradeCardPrefab: {fileID: 5867326435726226133, guid: d90a5d957df262844a00df29207f32fd, type: 3}
   pauseMenu: {fileID: 837512085}
   stats: {fileID: 1731498383}
@@ -1442,11 +1473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea3aec28ff0bbe43a77e4cdfc173ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
---- !u!1 &1802190599 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5658820540263630409, guid: 8ee0046007778a940beb780b1282601e, type: 3}
-  m_PrefabInstance: {fileID: 8857969207805838491}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1809151595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,11 +1609,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809151595}
   m_CullTransparentMesh: 1
---- !u!1 &1982989259 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5998754975683185711, guid: 604b552ac6d0f8d42a54d1378a0660dd, type: 3}
-  m_PrefabInstance: {fileID: 6321472344466679270}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2040070133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,75 +2330,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3819636666374554848}
   m_CullTransparentMesh: 1
---- !u!1001 &6885485758313063828
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3078865622975052123, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1731498377}
-    - target: {fileID: 0}
-      propertyPath: healthPrefab
-      value: 
-      objectReference: {fileID: 1982989259}
-    - target: {fileID: 0}
-      propertyPath: experiencePrefab
-      value: 
-      objectReference: {fileID: 1802190599}
-    - target: {fileID: 7131543713502421687, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7131543713502421687, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7131543713502421687, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7131543713502421687, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7131543713502421687, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7131543713502421687, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7131543713502421687, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7131543713502421687, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7131543713502421687, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7131543713502421687, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8781565786240990418, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
-      propertyPath: m_Name
-      value: Wizard_Enemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
 --- !u!1001 &8825290186199275435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2574,4 +2526,3 @@ SceneRoots:
   - {fileID: 1731498376}
   - {fileID: 6321472344466679270}
   - {fileID: 8857969207805838491}
-  - {fileID: 6885485758313063828}
