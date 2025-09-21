@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88bcd17accfcbd447aa5b2de30053c69, type: 3}
   m_Name: Rare Percentage Projectile Damage Card
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCardData
-  title: Flat Projectile Damage
-  description: A flat increase to projectile damage
+  title: Projectile Damage
+  description: A percentage increase to projectile damage
   buffType: 3
   rarity: 2
-  valueType: 0
-  value: 20
+  valueType: 1
+  value: 15

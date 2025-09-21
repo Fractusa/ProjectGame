@@ -32,6 +32,7 @@ public class EnemySpawner : MonoBehaviour
     //Enemy scaling
     public float healthScalingRate = 10.0f; //Percentage increase per minute
     public float damageScalingRate = 10.0f; //Percentage increase per minute
+    public float dropScalingRate = 50.0f; //Percentage increase per minute
 
     void Start()
     {
@@ -97,12 +98,14 @@ public class EnemySpawner : MonoBehaviour
 
             EnemyHealth enemyHealth = newEnemy.GetComponent<EnemyHealth>();
             EnemyDamage enemyDamage = newEnemy.GetComponent<EnemyDamage>();
+            EnemyDrops enemyDrops = newEnemy.GetComponent<EnemyDrops>();
 
             if (enemyHealth != null && enemyDamage != null)
             {
                 // Set the enemy's base stats here, the enemy will scale itself
                 enemyHealth.Setup(enemyHealth.maxHealth, healthScalingRate);
                 enemyDamage.Setup(enemyDamage.damageAmount, damageScalingRate);
+                enemyDrops.Setup(enemyDrops.baseDropScore, dropScalingRate);
             }
         }
 

@@ -18,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
 
     private Rigidbody2D rb;
     private List<StatusEffect> activeEffects = new List<StatusEffect>(); //Existing effects
+    private EnemyDrops enemyDrops;
 
     private Dictionary<DamageType, FloatingDamageText> activeDotTexts = new Dictionary<DamageType, FloatingDamageText>();
 
@@ -26,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         rb = GetComponent<Rigidbody2D>();
+        enemyDrops = GetComponent<EnemyDrops>();
 
         //Set up the health bar when enemy spawns
         if (healthBar != null)
@@ -44,7 +46,7 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             float currentTime = GameClock.Instance.ElapsedTime;
-            float scaledHealth = baseHealth + (int)baseHealth / 60f * currentTime;
+            float scaledHealth = baseHealth + (baseHealth * (healthScalingRate / 100f) / 60f * currentTime);
             maxHealth = Mathf.RoundToInt(scaledHealth);
         }
 
@@ -131,10 +133,15 @@ public class EnemyHealth : MonoBehaviour
         }
         activeDotTexts.Clear();
 
-        float healthSpawnValue = Random.value;
+        /*float healthSpawnValue = Random.value;
         if (healthSpawnValue < healthSpawnChance)
             EnemyEvents.EnemyDied(rb.position, healthPrefab);
-        EnemyEvents.EnemyDied(rb.position, experiencePrefab);
+        EnemyEvents.EnemyDied(rb.position, experiencePrefab);*/
+
+        enemyDrops.DropLoot();
+
+
+
 
         Destroy(gameObject); //destroys enemy
     }

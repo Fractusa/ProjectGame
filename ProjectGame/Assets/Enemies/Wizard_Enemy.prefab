@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 3078865622975052123}
   - component: {fileID: 826519854570088821}
   - component: {fileID: 5857969374137231308}
+  - component: {fileID: 7484481728967128764}
   m_Layer: 0
   m_Name: Wizard_Enemy
   m_TagString: Enemy
@@ -277,3 +278,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.08, y: 0.105}
   m_EdgeRadius: 0
+--- !u!114 &7484481728967128764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8781565786240990418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00cc48cac989a5941a2260b63447e78b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDrops
+  experiencePrefab: {fileID: 5658820540263630409, guid: 8ee0046007778a940beb780b1282601e, type: 3}
+  healthPrefab: {fileID: 5998754975683185711, guid: 604b552ac6d0f8d42a54d1378a0660dd, type: 3}
+  healthSpawnChance: 0.1
+  baseDropScore: 5

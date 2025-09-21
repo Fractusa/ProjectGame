@@ -15,7 +15,7 @@ public class EnemyDamage : MonoBehaviour
         else
         {
             float currentTime = GameClock.Instance.ElapsedTime;
-            float scaledDamage = baseDamage + (int)damageScalingRate / 60f * currentTime;
+            float scaledDamage = baseDamage + (baseDamage * (damageScalingRate / 100f) / 60f * currentTime);
 
             damageAmount = Mathf.RoundToInt(scaledDamage);
         }
