@@ -18,3 +18,5 @@ MonoBehaviour:
   projectileEffects:
   - {fileID: 11400000, guid: 5fe832b6cf8234d4c9a0b1806422173e, type: 2}
   - {fileID: 11400000, guid: 84100c688d95e164db2829f24c7d93ea, type: 2}
+  pierces: 1
+  explosionRadius: 0

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Vector2 move;
     Vector2 moveDirection = new(1, 0);
     [SerializeField] private Stats playerStats;
+    public List<AbilityData> startingAbilities;
     public List<AbilityData> abilities;
     Vector2 previousPosition;
     public Vector2 CurrentVelocity { get; private set; }
@@ -19,6 +21,8 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        abilities = startingAbilities.Select(a => Instantiate(a)).ToList();
+
         MoveAction.Enable();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -67,4 +71,16 @@ public class PlayerController : MonoBehaviour
         CurrentVelocity = (position - previousPosition) / Time.fixedDeltaTime;
         previousPosition = position;
     }
+
+    public void AddAbility(AbilityData abilityToAdd)
+{
+    //Create a runtime instance so we don’t modify the project asset
+    AbilityData newAbility = Instantiate(abilityToAdd);
+
+    //Add to player’s runtime list
+    abilities.Add(newAbility);
+
+    //Run setup so its effects initialize properly
+    newAbility.OnSetup(gameObject);
+}
 }

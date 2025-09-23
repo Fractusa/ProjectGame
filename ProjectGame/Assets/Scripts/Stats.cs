@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public enum BuffType
 {
+    //Player Stats
     Health,
     MovementSpeed,
     MeleeDamage,
@@ -10,7 +13,10 @@ public enum BuffType
     FireDamage,
     AttackCooldown,
     ProjectileRange,
-    Luck
+    Luck,
+
+    //Ability Stats
+    Pierces
 }
 public class Stats : MonoBehaviour
 {
@@ -34,12 +40,19 @@ public class Stats : MonoBehaviour
     public float AttackCooldown => attackCooldown;
     public int Luck => luck;
 
+    private PlayerController player;
+
+    void Start()
+    {
+        player = GetComponent<PlayerController>();
+    }
 
     // This method applies a buff based on the selected upgrade
-    public void ApplyBuff(UpgradeCardData upgrade)
+    public void ApplyBuff(UpgradeCardData upgrade, AbilityData targetAbility)
     {
         switch (upgrade.buffType)
         {
+            //Player stats
             case BuffType.Health:
                 if (upgrade.valueType == UpgradeCardData.ValueType.Flat)
                     maxHealth += Mathf.RoundToInt(upgrade.value);
@@ -94,6 +107,22 @@ public class Stats : MonoBehaviour
                 else
                     luck += Mathf.RoundToInt(luck * (upgrade.value / 100f));
                 break;
+
+            //Ability stats
+            case BuffType.Pierces:
+                if (targetAbility != null )
+                {
+                    //Find the player's instance of the ability
+                    AbilityData playerAbility = player.abilities.FirstOrDefault(a => a.Name == targetAbility.Name);
+
+                    if(playerAbility != null && playerAbility.ProjectileEffects.Any(e => e is PiercingProjectile))                
+                        playerAbility.pierces += Mathf.RoundToInt(upgrade.value);
+
+                    Debug.Log($"{targetAbility.Name} pierces = {targetAbility.pierces}");              
+                }
+                
+                break;
+
         }
     }
 

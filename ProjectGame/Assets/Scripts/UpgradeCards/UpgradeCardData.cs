@@ -13,6 +13,7 @@ public class UpgradeCardData : ScriptableObject
     //The type of value change to use
     public enum ValueType { Flat, Percentage }
     public ValueType valueType;
+    public AbilityData targetAbility;
 
     //The amount to change the stat by
     public float value;

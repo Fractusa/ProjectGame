@@ -6,7 +6,12 @@ public class AbilityData : ScriptableObject, IAbilityData
     [SerializeField] private string abilityName;
     public string Name => abilityName;
     [SerializeField] private AbilityAttackEffectBase[] effects;
+    public AbilityAttackEffectBase[] Effects => effects;
     [SerializeField] private ProjectileEffectBase[] projectileEffects;
+    public ProjectileEffectBase[] ProjectileEffects => projectileEffects;
+
+    public int pierces = 1;
+    public int explosionRadius = 0;
 
     //Logic to be run whenever an effect is removed from the ability
     public void OnCleanup(GameObject owner)
@@ -27,6 +32,6 @@ public class AbilityData : ScriptableObject, IAbilityData
     public void OnUse(GameObject owner)
     {
         foreach (var e in effects)
-            e.OnUse(owner, projectileEffects);
+            e.OnUse(owner, this, projectileEffects);
     }
 }

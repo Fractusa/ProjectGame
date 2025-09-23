@@ -3,7 +3,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ProjectileEffects/Piercing")]
 public class PiercingProjectile : ProjectileEffectBase
 {
-    [SerializeField] private int maxPierces = 3;
     public override void OnHit(GameObject projectile, Collider2D hit, int damage)
     {
         var pierceData = projectile.GetComponent<PierceData>();
@@ -15,7 +14,7 @@ public class PiercingProjectile : ProjectileEffectBase
 
         pierceData.Pierces++;
 
-        if (pierceData.Pierces >= maxPierces)
+        if (pierceData.Pierces >= pierceData.MaxPierces)
             Destroy(projectile);
     }
 }
@@ -23,4 +22,5 @@ public class PiercingProjectile : ProjectileEffectBase
 public class PierceData : MonoBehaviour
 {
     public int Pierces;
+    public int MaxPierces;
 }

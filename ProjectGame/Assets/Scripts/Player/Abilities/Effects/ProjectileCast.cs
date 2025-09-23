@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Linq;
+using Unity.VisualScripting;
 
 [CreateAssetMenu(menuName = "Abilities/Attack Effect/Projectile Cast")]
 public class ProjectileCast : AbilityAttackEffectBase
@@ -24,7 +25,7 @@ public class ProjectileCast : AbilityAttackEffectBase
         playerController = owner.GetComponent<PlayerController>();
     }
 
-    public override void OnUse(GameObject owner, ProjectileEffectBase[] projectileEffects = null)
+    public override void OnUse(GameObject owner, AbilityData ability, ProjectileEffectBase[] projectileEffects = null)
     {
         GameObject closestEnemy = FindClosestEnemy(owner.transform.position);
         if (closestEnemy == null) return;
@@ -56,6 +57,13 @@ public class ProjectileCast : AbilityAttackEffectBase
             if (projectileEffects != null)
             {
                 proj.SetEffects(projectileEffects);
+            }
+
+            if (ability.pierces > 0)
+            {
+                var pierceData = projectile.AddComponent<PierceData>();
+                pierceData.Pierces = 0;
+                pierceData.MaxPierces = ability.pierces;
             }
         }                    
     }

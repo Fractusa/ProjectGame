@@ -15,6 +15,7 @@ public class LevelUpManager : MonoBehaviour
 
     public PauseMenu pauseMenu;
     public Stats stats;
+    private ProjectileUpgrade projUpgrade;
 
     private bool isLevelingUp = false;
 
@@ -65,8 +66,8 @@ public class LevelUpManager : MonoBehaviour
     public void SelectUpgrade(UpgradeCardData selectedUpgrade)
     {
         //Apply the buff to the players stats
-        stats.ApplyBuff(selectedUpgrade);
-        
+        stats.ApplyBuff(selectedUpgrade, selectedUpgrade.targetAbility);
+
         pauseMenu.Resume();
         levelUpUI.SetActive(false);
         isLevelingUp = false;
