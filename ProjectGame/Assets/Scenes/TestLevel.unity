@@ -381,6 +381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1 &103980285
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1001 &361871027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -690,6 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1001 &424666247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -990,6 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1 &756733178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1027,7 @@ MonoBehaviour:
   player: {fileID: 989635217}
   spawnInterval: 2
   spawnRange: 20
-  spawnerTurnedOn: 0
+  spawnerTurnedOn: 1
 --- !u!4 &756733180
 Transform:
   m_ObjectHideFlags: 0
@@ -39913,6 +39917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1001 &933156676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40004,6 +40009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!4 &989635217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6246336600257967269, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
@@ -68601,6 +68607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1 &1144120085 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 275618474423837546, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
@@ -68624,6 +68631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1 &1154119269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 275618474423837546, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
@@ -68647,6 +68655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1 &1195437965
 GameObject:
   m_ObjectHideFlags: 0
@@ -68717,6 +68726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1 &1285741353 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 275618474423837546, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
@@ -68740,6 +68750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1 &1303559282 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 275618474423837546, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
@@ -68763,6 +68774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1001 &1304562507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68854,6 +68866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1001 &1381676072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69407,6 +69420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1 &1873613408 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 275618474423837546, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
@@ -69430,6 +69444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1001 &1883602439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69808,6 +69823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
+  experiencePrefab: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

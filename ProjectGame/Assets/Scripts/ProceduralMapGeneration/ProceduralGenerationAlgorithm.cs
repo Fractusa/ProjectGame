@@ -1,0 +1,130 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public static class ProceduralGenerationAlgorithm
+{
+
+    // Method to randomly walk in directions not already "walked" on
+    public static HashSet<Vector2Int> SimpleRandomWalk(Vector2Int startPostion, int walkLength)
+    {
+        HashSet<Vector2Int> path = new HashSet<Vector2Int>();
+
+        path.Add(startPostion);
+        var previousPosition = startPostion;
+
+        for (int i = 0; i < walkLength; i++)
+        {
+            var newPosition = previousPosition + Direction2D.GetRandomCardinalDirection();
+            path.Add(newPosition);
+            previousPosition = newPosition;
+        }
+
+        return path;
+    }
+
+    // Uses the method to create random corridors.
+    public static List<Vector2Int> RandomWalkCorridor(Vector2Int startPosition, int corridorLength)
+    {
+        List<Vector2Int> corridor = new List<Vector2Int>();
+        var direction = Direction2D.GetRandomCardinalDirection();
+        var currentPosition = startPosition;
+        corridor.Add(currentPosition);
+
+        for (int i = 0; i < corridorLength; i++)
+        {
+            currentPosition += direction;
+            corridor.Add(currentPosition);
+        }
+        return corridor;
+    }
+    // To create rooms using Binary Space Partitioning, not sure if we should keep this. Fairly complex
+    public static List<BoundsInt> BinarySpacePartitioning(BoundsInt spaceToSplit, int minimumWidth, int minimumHeight)
+    {
+        Queue<BoundsInt> roomsQueue = new Queue<BoundsInt>();
+        List<BoundsInt> roomsList = new List<BoundsInt>();
+        roomsQueue.Enqueue(spaceToSplit); // Læs op på enqueue
+        while (roomsQueue.Count > 0)
+        {
+            var room = roomsQueue.Dequeue();
+            if (room.size.y >= minimumHeight && room.size.x >= minimumWidth)
+            {
+                if (Random.value < 0.5f)
+                {
+                    if (room.size.y >= minimumHeight * 2)
+                    {
+                        SplitHorizontally(minimumHeight, roomsQueue, room);
+                    }
+                    else if (room.size.x >= minimumWidth * 2)
+                    {
+                        SplitVertically(minimumHeight, roomsQueue, room);
+                    }
+                    else if (room.size.x >= minimumWidth && room.size.y >= minimumHeight)
+                    {
+                        roomsList.Add(room);
+                    }
+                }
+
+                else
+                {
+                    if (room.size.x >= minimumWidth * 2)
+                    {
+                        SplitVertically(minimumWidth,roomsQueue, room);
+                    }
+                    else if (room.size.y >= minimumHeight * 2)
+                    {
+                        SplitHorizontally(minimumHeight, roomsQueue, room);
+                    }
+                    else if (room.size.x >= minimumWidth && room.size.y >= minimumHeight)
+                    {
+                        roomsList.Add(room);
+                    }
+                }
+            }
+        }
+        return roomsList;
+    }
+
+    private static void SplitVertically(int minimumWidth, Queue<BoundsInt> roomsQueue, BoundsInt room)
+    {
+        var xSplit = Random.Range(1, room.size.x);
+
+        BoundsInt room1 = new BoundsInt(room.min, new Vector3Int(xSplit, room.size.y, room.size.z));
+        BoundsInt room2 = new BoundsInt(new Vector3Int(room.min.x + xSplit, room.min.y, room.min.z),
+            new Vector3Int(room.size.x - xSplit, room.size.y, room.size.z));
+
+        roomsQueue.Enqueue(room1);
+        roomsQueue.Enqueue(room2);
+
+    }
+
+    private static void SplitHorizontally(int minimumHeight, Queue<BoundsInt> roomsQueue, BoundsInt room)
+    {
+        var ySplit = Random.Range(1, room.size.y);
+
+        BoundsInt room1 = new BoundsInt(room.min, new Vector3Int(room.size.x, ySplit, room.size.z));
+        BoundsInt room2 = new BoundsInt(new Vector3Int(room.min.x, room.min.y + ySplit, room.min.z),
+        new Vector3Int(room.size.x, room.size.y - ySplit, room.size.z));
+
+        roomsQueue.Enqueue(room1);
+        roomsQueue.Enqueue(room2);
+    }
+}
+
+public static class Direction2D
+{
+    public static List<Vector2Int> cardinalDirectionsList = new List<Vector2Int>
+    {
+        new Vector2Int(0, 1), //UP
+        new Vector2Int(1, 0), //RIGHT
+        new Vector2Int(0, -1), //DOWN
+        new Vector2Int(-1, 0) //LEFT
+    };
+
+    public static Vector2Int GetRandomCardinalDirection()
+    {
+        return cardinalDirectionsList[Random.Range(0, cardinalDirectionsList.Count)];
+    }
+
+}
+
