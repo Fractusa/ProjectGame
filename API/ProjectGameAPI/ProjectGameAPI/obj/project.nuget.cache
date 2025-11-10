@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "SzB4G8kIbnk=",
+  "success": true,
+  "projectFilePath": "E:\\Program Files\\Unity Games\\ProjectGame Git\\API\\ProjectGameAPI\\ProjectGameAPI\\ProjectGameAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ehris\\.nuget\\packages\\graphql\\8.7.0\\graphql.8.7.0.nupkg.sha512",
+    "C:\\Users\\ehris\\.nuget\\packages\\graphql-parser\\9.5.0\\graphql-parser.9.5.0.nupkg.sha512",
+    "C:\\Users\\ehris\\.nuget\\packages\\graphql.analyzers\\8.7.0\\graphql.analyzers.8.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
