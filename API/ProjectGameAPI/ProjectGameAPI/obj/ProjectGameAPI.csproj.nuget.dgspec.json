@@ -53,6 +53,18 @@
             "GraphQL": {
               "target": "Package",
               "version": "[8.7.0, )"
+            },
+            "HotChocolate.AspNetCore": {
+              "target": "Package",
+              "version": "[15.1.11, )"
+            },
+            "HotChocolate.Data.EntityFramework": {
+              "target": "Package",
+              "version": "[15.1.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.22, )"
             }
           },
           "imports": [
