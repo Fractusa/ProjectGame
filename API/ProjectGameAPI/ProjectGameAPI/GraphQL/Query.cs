@@ -9,6 +9,8 @@ namespace ProjectGameAPI.GraphQL
     public class Query
     {
         //Get all players
+        //UseFiltering allows Unity to filter the players eg. using "where" for finding a specific player
+        //UseSorting allows for sorting the data by fields such as username, ID, highscore etc.
         [UseFiltering]
         [UseSorting]
         public IQueryable<Player> GetPlayers(AppDbContext context) => context.Players;

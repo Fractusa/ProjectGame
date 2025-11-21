@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProjectGameAPI.Data
 {
+    //Represents the EF Core database.
     public class AppDbContext : DbContext
     {
         //Database tables defined with 2 tables: Player and HighScore
