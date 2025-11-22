@@ -1,16 +1,91 @@
 using UnityEngine;
+using System.Linq;
+using Unity.VisualScripting;
 
-public class ProjectileSpreadShot : MonoBehaviour
+[CreateAssetMenu(menuName = "Abilities/Attack Effect/Projectile Spread Shot")]
+public class ProjectileSpreadShot : AbilityAttackEffectBase
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private float projectileSpeed = 500f;
+    Stats stats;
+    AbilityState state;
+    Rigidbody2D playerRb;
+    PlayerController playerController;
+    [SerializeField] private int projectileCount = 2;
+
+    public override void OnCleanup(GameObject owner)
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnSetup(GameObject owner)
     {
+        stats = owner.GetComponent<Stats>();
+        state = owner.GetComponent<AbilityState>();
+        playerRb = owner.GetComponent<Rigidbody2D>();
+        playerController = owner.GetComponent<PlayerController>();
+    }
+
+    public override void OnUse(GameObject owner, AbilityData ability, ProjectileEffectBase[] projectileEffects = null)
+    {
+        GameObject closestEnemy = FindClosestEnemy(owner.transform.position);
+        if (closestEnemy == null) return;
         
+        //Finds the AbilityState component from the owner, if it doesn't exist assigns it to the owner.
+        if (state == null) state = owner.AddComponent<AbilityState>();
+
+        //Find shoot direction and calculate angle
+        Vector2 shootDir = (closestEnemy.transform.position - owner.transform.position).normalized;
+        float angle = Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg;
+
+        //Spawns the projectile positioned closer towards the top middle of caster
+        Vector2 spawnPos = playerRb.position + Vector2.up * 0.5f;
+
+        if (Time.time >= state.LastAttackTime + stats.AttackCooldown)
+        {
+            state.LastAttackTime = Time.time;
+
+            for(int i = 0; i < projectileCount; i++)
+            {
+                GameObject projectile = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
+                projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
+                Projectile proj = projectile.GetComponent<Projectile>();
+
+                if (proj != null)
+                {
+                    Vector2 playerVelocity = playerController.CurrentVelocity;
+                    proj.Launch(shootDir, projectileSpeed, stats.ProjectileDamage, playerVelocity);
+                }
+
+                if (projectileEffects != null)
+                {
+                    proj.SetEffects(projectileEffects);
+                }
+            }
+            // if (ability.pierces > 0)
+            // {
+            //     var pierceData = projectile.AddComponent<PierceData>();
+            //     pierceData.Pierces = 0;
+            //     pierceData.MaxPierces = ability.pierces;
+            // }
+        }                    
+    }
+
+    private GameObject FindClosestEnemy(Vector2 origin)
+    {
+        //Finds enemies tagged "Enemy"
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemies.Length == 0)
+            return null;
+
+        foreach (var e in enemies)
+            if (Vector2.Distance(origin, e.transform.position) < stats.ProjectileRange)
+            {
+                return enemies
+                    .OrderBy(e => Vector2.Distance(origin, e.transform.position))
+                    .FirstOrDefault();
+            }
+
+        return null;
     }
 }

@@ -1391,7 +1391,7 @@ PrefabInstance:
     - target: {fileID: 1689806870254723020, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
       propertyPath: 'startingAbilities.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 8305ee110422dd64094cd510f00ff2cd, type: 2}
+      objectReference: {fileID: 11400000, guid: 8b4e22dfadd1da445bf8007009f26065, type: 2}
     - target: {fileID: 3035764914230837567, guid: d84bafbf2497d904a9dbe32b9b39c08b, type: 3}
       propertyPath: healthBar
       value: 
