@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Linq;
 using Unity.VisualScripting;
+using System.Runtime.CompilerServices;
 
 [CreateAssetMenu(menuName = "Abilities/Attack Effect/Projectile Spread Shot")]
 public class ProjectileSpreadShot : AbilityAttackEffectBase
@@ -61,7 +62,7 @@ public class ProjectileSpreadShot : AbilityAttackEffectBase
                 Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
 
                 GameObject projectile = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
-                projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
+                projectile.transform.rotation = Quaternion.Euler(0, 0, currentAngle);
                 Projectile proj = projectile.GetComponent<Projectile>();
 
                 if (proj != null)
