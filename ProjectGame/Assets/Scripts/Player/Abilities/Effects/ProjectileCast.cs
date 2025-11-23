@@ -8,7 +8,6 @@ public class ProjectileCast : AbilityAttackEffectBase
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float projectileSpeed = 500f;
     Stats stats;
-    AbilityState state;
     Rigidbody2D playerRb;
     PlayerController playerController;
 
@@ -19,8 +18,7 @@ public class ProjectileCast : AbilityAttackEffectBase
 
     public override void OnSetup(GameObject owner)
     {
-        stats = owner.GetComponent<Stats>();
-        state = owner.GetComponent<AbilityState>();
+        stats = owner.GetComponent<Stats>();    
         playerRb = owner.GetComponent<Rigidbody2D>();
         playerController = owner.GetComponent<PlayerController>();
     }
@@ -29,9 +27,6 @@ public class ProjectileCast : AbilityAttackEffectBase
     {
         GameObject closestEnemy = FindClosestEnemy(owner.transform.position);
         if (closestEnemy == null) return;
-        
-        //Finds the AbilityState component from the owner, if it doesn't exist assigns it to the owner.
-        if (state == null) state = owner.AddComponent<AbilityState>();
 
         //Find shoot direction and calculate angle
         Vector2 shootDir = (closestEnemy.transform.position - owner.transform.position).normalized;
@@ -40,32 +35,28 @@ public class ProjectileCast : AbilityAttackEffectBase
         //Spawns the projectile positioned closer towards the top middle of caster
         Vector2 spawnPos = playerRb.position + Vector2.up * 0.5f;
 
-        if (Time.time >= state.LastAttackTime + stats.AttackCooldown)
+        GameObject projectile = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
+        //Rotate projectile to face correct direction
+        projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
+        Projectile proj = projectile.GetComponent<Projectile>();
+
+        if (proj != null)
         {
-            state.LastAttackTime = Time.time;
-            GameObject projectile = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
-            //Rotate projectile to face correct direction
-            projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
-            Projectile proj = projectile.GetComponent<Projectile>();
+            Vector2 playerVelocity = playerController.CurrentVelocity;
+            proj.Launch(shootDir, projectileSpeed, stats.ProjectileDamage, playerVelocity);
+        }
 
-            if (proj != null)
-            {
-                Vector2 playerVelocity = playerController.CurrentVelocity;
-                proj.Launch(shootDir, projectileSpeed, stats.ProjectileDamage, playerVelocity);
-            }
+        if (projectileEffects != null)
+        {
+            proj.SetEffects(projectileEffects);
+        }
 
-            if (projectileEffects != null)
-            {
-                proj.SetEffects(projectileEffects);
-            }
-
-            if (ability.pierces > 0)
-            {
-                var pierceData = projectile.AddComponent<PierceData>();
-                pierceData.Pierces = 0;
-                pierceData.MaxPierces = ability.pierces;
-            }
-        }                    
+        if (ability.pierces > 0)
+        {
+            var pierceData = projectile.AddComponent<PierceData>();
+            pierceData.Pierces = 0;
+            pierceData.MaxPierces = ability.pierces;
+        }                  
     }
 
     private GameObject FindClosestEnemy(Vector2 origin)

@@ -9,6 +9,7 @@ public class AbilityData : ScriptableObject, IAbilityData
     public AbilityAttackEffectBase[] Effects => effects;
     [SerializeField] private ProjectileEffectBase[] projectileEffects;
     public ProjectileEffectBase[] ProjectileEffects => projectileEffects;
+    public float lastAttackTime;
 
     public int pierces = 1;
     public int explosionRadius = 0;
@@ -31,6 +32,13 @@ public class AbilityData : ScriptableObject, IAbilityData
     //projectileEffects are passed through here, to enable applying effects to Projectile object rather than Player object
     public void OnUse(GameObject owner)
     {
+        Stats stats = owner.GetComponent<Stats>();
+
+        if(Time.time < lastAttackTime + stats.AttackCooldown)   
+            return;
+
+        lastAttackTime = Time.time;
+
         foreach (var e in effects)
             e.OnUse(owner, this, projectileEffects);
     }

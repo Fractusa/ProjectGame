@@ -9,7 +9,6 @@ public class ProjectileSpreadShot : AbilityAttackEffectBase
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float projectileSpeed = 500f;
     Stats stats;
-    AbilityState state;
     Rigidbody2D playerRb;
     PlayerController playerController;
     [SerializeField] private int projectileCount = 2;
@@ -23,7 +22,7 @@ public class ProjectileSpreadShot : AbilityAttackEffectBase
     public override void OnSetup(GameObject owner)
     {
         stats = owner.GetComponent<Stats>();
-        state = owner.GetComponent<AbilityState>();
+        //state = owner.GetComponent<AbilityState>();
         playerRb = owner.GetComponent<Rigidbody2D>();
         playerController = owner.GetComponent<PlayerController>();
     }
@@ -32,9 +31,6 @@ public class ProjectileSpreadShot : AbilityAttackEffectBase
     {
         GameObject closestEnemy = FindClosestEnemy(owner.transform.position);
         if (closestEnemy == null) return;
-        
-        //Finds the AbilityState component from the owner, if it doesn't exist assigns it to the owner.
-        if (state == null) state = owner.AddComponent<AbilityState>();
 
         //Find shoot direction and calculate angle
         Vector2 shootDir = (closestEnemy.transform.position - owner.transform.position).normalized;
@@ -43,47 +39,42 @@ public class ProjectileSpreadShot : AbilityAttackEffectBase
         //Spawns the projectile positioned closer towards the top middle of caster
         Vector2 spawnPos = playerRb.position + Vector2.up * 0.5f;
 
-        if (Time.time >= state.LastAttackTime + stats.AttackCooldown)
+        int count = projectileCount;
+        float step = (count > 1) ? spreadAngle / (count - 1) : 0f;
+        float startOffset = -spreadAngle / 2f; // center around baseAngle
+
+        for(int i = 0; i < count; i++)
         {
-            state.LastAttackTime = Time.time;
+            // Angle offset for this projectile
+            float offset = startOffset + step * i;
+            float currentAngle = angle + offset;
 
-            int count = projectileCount;
-            float step = (count > 1) ? spreadAngle / (count - 1) : 0f;
-            float startOffset = -spreadAngle / 2f; // center around baseAngle
+            // Convert angle to direction vector
+            float rad = currentAngle * Mathf.Deg2Rad;
+            Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
 
-            for(int i = 0; i < count; i++)
+            GameObject projectile = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
+            projectile.transform.rotation = Quaternion.Euler(0, 0, currentAngle);
+            Projectile proj = projectile.GetComponent<Projectile>();
+
+            if (proj != null)
             {
-                // Angle offset for this projectile
-                float offset = startOffset + step * i;
-                float currentAngle = angle + offset;
+                Vector2 playerVelocity = playerController.CurrentVelocity;
+                proj.Launch(dir, projectileSpeed, stats.ProjectileDamage, playerVelocity);
 
-                // Convert angle to direction vector
-                float rad = currentAngle * Mathf.Deg2Rad;
-                Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
-
-                GameObject projectile = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
-                projectile.transform.rotation = Quaternion.Euler(0, 0, currentAngle);
-                Projectile proj = projectile.GetComponent<Projectile>();
-
-                if (proj != null)
+                if (projectileEffects != null)
                 {
-                    Vector2 playerVelocity = playerController.CurrentVelocity;
-                    proj.Launch(dir, projectileSpeed, stats.ProjectileDamage, playerVelocity);
-
-                    if (projectileEffects != null)
-                    {
-                        proj.SetEffects(projectileEffects);
-                    }
+                    proj.SetEffects(projectileEffects);
                 }
             }
+        }
 
-            // if (ability.pierces > 0)
-            // {
-            //     var pierceData = projectile.AddComponent<PierceData>();
-            //     pierceData.Pierces = 0;
-            //     pierceData.MaxPierces = ability.pierces;
-            // }
-        }                    
+        // if (ability.pierces > 0)
+        // {
+        //     var pierceData = projectile.AddComponent<PierceData>();
+        //     pierceData.Pierces = 0;
+        //     pierceData.MaxPierces = ability.pierces;
+        // }                  
     }
 
     private GameObject FindClosestEnemy(Vector2 origin)
