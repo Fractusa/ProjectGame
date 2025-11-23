@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 8799701477003936558}
   - component: {fileID: 8750139591280152754}
   - component: {fileID: 1569894142473963075}
+  - component: {fileID: 952202531207497191}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -415,6 +416,7 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   playerStats: {fileID: 8284372614960483457}
+  startingAbilities: []
   abilities:
   - {fileID: 11400000, guid: 8305ee110422dd64094cd510f00ff2cd, type: 2}
 --- !u!114 &8284372614960483457
@@ -437,6 +439,7 @@ MonoBehaviour:
   acidDamage: 0
   fireDamage: 0
   attackCooldown: 0.5
+  luck: 0
 --- !u!114 &609854643817345431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,3 +557,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.19, y: 0.34240764}
   m_EdgeRadius: 0
+--- !u!114 &952202531207497191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7423556175306686413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ca03db508b6b34a993f4842b57e6d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerManager

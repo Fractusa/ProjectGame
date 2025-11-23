@@ -1913,6 +1913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1935db99d7f685d4d88f923ff455000f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
+  gameOverScreen: {fileID: 1788600049}
 --- !u!114 &1415896708
 MonoBehaviour:
   m_ObjectHideFlags: 0

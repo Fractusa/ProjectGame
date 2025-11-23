@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(Stats))]
 public class PlayerHealth : MonoBehaviour
@@ -8,9 +9,13 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar; //Add a public reference to the HealtBar script
     private int currentHealth = 0;
     public int MaxHealth => playerStats.MaxHealth;
+    private bool isDead = false;
+
+    public static event Action OnPlayerDied; //Event to trigger once the player dies, EventSystem subscribes to this
 
     void Start()
     {
+        isDead = false;
         playerStats = GetComponent<Stats>();
         currentHealth = playerStats.MaxHealth;
 
@@ -21,31 +26,27 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (currentHealth <= 0)
-        {
-            Die();
-
-        }
-    }
-
-    // public void TakeDamage(int amount)
+    // void Update()
     // {
-    //     currentHealth -= amount;
-    //     Debug.Log("Player took damage");
+    //     if (currentHealth <= 0)
+    //     {
+    //         Die();
 
-    //     //Show damage numbers above head
-    //     DamageTextManager.Instance.ShowDamage(transform, amount, Color.white);
+    //     }
     // }
+
     private void Die()
     {
+        isDead = true;
         Debug.Log("Player died");
-        //To do add death animation/game over/respawn
+        OnPlayerDied?.Invoke();
+
     }
 
     public void ChangeHealth(int amount)
-    {     
+    {
+        if (isDead) return;
+
         if (amount < 0)
         {
             //Makes sure that health value stays within 0 and max health.
@@ -70,6 +71,10 @@ public class PlayerHealth : MonoBehaviour
             }
 
             Debug.Log("Player healed " + amount + " damage");
+        }
+        if(currentHealth <= 0)
+        {
+            Die();
         }
     }
 
