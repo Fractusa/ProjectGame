@@ -43,6 +43,20 @@ public class EnemySpawner : MonoBehaviour
             GameObject parent = new GameObject("Enemies");
             enemyParent = parent.transform;
         }
+
+        if (player == null)
+        {
+            // Find the player by tag, assuming your player has the tag "Player"
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                player = playerObj.transform;
+            }
+            else
+            {
+                Debug.LogError("Player GameObject not found in the scene! Spawner will not work.");
+            }
+        }
     }
     void Update()
     {
