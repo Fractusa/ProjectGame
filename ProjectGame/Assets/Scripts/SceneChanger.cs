@@ -21,6 +21,10 @@ public class SceneChanger : MonoBehaviour
     {
         Time.timeScale = 1f;
         gameOverScreen.SetActive(false);
+        if(GameClock.Instance != null)
+        {
+            GameClock.Instance.ResetClock();
+        }
         SceneManager.LoadSceneAsync(0);
     }
 
