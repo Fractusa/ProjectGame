@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour
         {
             //If no instance of player exists, make this the player instance and keep it.
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else if (Instance != this)
         {

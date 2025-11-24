@@ -20,7 +20,7 @@ public class GameClock : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); //keeps the clock between scenes
+            //DontDestroyOnLoad(gameObject); //keeps the clock between scenes
         }
 
     }
