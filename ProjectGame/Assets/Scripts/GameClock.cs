@@ -5,7 +5,7 @@ public class GameClock : MonoBehaviour
 {
     public static GameClock Instance;
 
-    public TextMeshProUGUI timeText;
+    private TextMeshProUGUI currentTimeDisplay;
 
     private float elapsedTime = 0f;
 
@@ -30,15 +30,28 @@ public class GameClock : MonoBehaviour
         elapsedTime += Time.deltaTime;
         DisplayTime(elapsedTime);
     }
+    
+    public void RegisterTimeDisplay(TextMeshProUGUI newDisplay)
+    {
+        currentTimeDisplay = newDisplay;
+        DisplayTime(elapsedTime);
+    }
 
     void DisplayTime(float timeToDisplay)
     {
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
-        if (timeText != null)
+        if (currentTimeDisplay != null)
         {
-            timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            currentTimeDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
+    }
+
+    public void ResetClock()
+    {
+        elapsedTime = 0f;
+        DisplayTime(elapsedTime);
+        Debug.Log("GameClock reset to 0:00");
     }
 }

@@ -156,8 +156,6 @@ MonoBehaviour:
     weight: 1
   - enemyPrefab: {fileID: 8781565786240990418, guid: 6b092b56b9f90674e9a5c7c4a490254c, type: 3}
     weight: 1
-  player: {fileID: 1731498377}
-  enemyCountText: {fileID: 1809151597}
   spawnRange: 20
   spawnerTurnedOn: 1
   enemyParent: {fileID: 0}
@@ -194,7 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfadfdf43a821d4f8502a7c4b46dbf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameClock
-  timeText: {fileID: 220097723}
 --- !u!1 &202647279
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +447,7 @@ GameObject:
   - component: {fileID: 220097722}
   - component: {fileID: 220097724}
   - component: {fileID: 220097723}
+  - component: {fileID: 220097725}
   m_Layer: 5
   m_Name: GameClock
   m_TagString: Untagged
@@ -575,6 +573,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220097721}
   m_CullTransparentMesh: 1
+--- !u!114 &220097725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220097721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da6b20fb23e2a6469b1e783223ec340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockUIRegister
 --- !u!1 &226012451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,6 +1923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1935db99d7f685d4d88f923ff455000f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
+  gameOverScreen: {fileID: 1788600049}
 --- !u!114 &1415896708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2274,6 +2285,7 @@ GameObject:
   - component: {fileID: 1809151596}
   - component: {fileID: 1809151598}
   - component: {fileID: 1809151597}
+  - component: {fileID: 1809151599}
   m_Layer: 5
   m_Name: EnemyCount
   m_TagString: Untagged
@@ -2399,6 +2411,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809151595}
   m_CullTransparentMesh: 1
+--- !u!114 &1809151599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809151595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a325058b0305244ba9696c5bbb7738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerUIRegister
+  spawner: {fileID: 98341778}
 --- !u!1 &2040070133
 GameObject:
   m_ObjectHideFlags: 0
