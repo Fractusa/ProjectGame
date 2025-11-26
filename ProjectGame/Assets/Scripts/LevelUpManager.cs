@@ -40,6 +40,7 @@ public class LevelUpManager : MonoBehaviour
         isLevelingUp = true;
         pauseMenu.Pause();
         levelUpUI.SetActive(true);
+        levelUpUI.transform.SetAsLastSibling();
 
         //Clear previous cards
         foreach (Transform child in cardSpawnParent)

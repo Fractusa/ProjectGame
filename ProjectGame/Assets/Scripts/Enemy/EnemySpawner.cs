@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 
@@ -15,8 +16,8 @@ public class EnemySpawner : MonoBehaviour
 {
     public EnemySpawnData[] enemySpawnData;
 
-    public Transform player;
-    public TextMeshProUGUI enemyCountText;
+    private Transform player;
+    private TextMeshProUGUI enemyCountText;
 
     //Enemy spawner settings
     private float spawnTimer;
@@ -34,19 +35,81 @@ public class EnemySpawner : MonoBehaviour
     public float damageScalingRate = 10.0f; //Percentage increase per minute
     public float dropScalingRate = 50.0f; //Percentage increase per minute
 
+    void Awake()
+    {
+        SetupEnemyParent();
+    }
     void Start()
     {
-        // Optional: If you don't assign an enemyParent in the Inspector,
+        InitializeSpawner();
+    }
+
+
+
+    private void SetupEnemyParent()
+    {
         // this will create a new GameObject to hold all enemies
         if (enemyParent == null)
         {
-            GameObject parent = new GameObject("Enemies");
-            enemyParent = parent.transform;
+            GameObject existingParent = GameObject.Find("Enemies");
+            if(existingParent != null)
+            {
+                enemyParent = existingParent.transform;
+                Debug.Log("Enemy parent found and linked");
+            }
+            else
+            {
+                GameObject parent = new GameObject("Enemies");
+                enemyParent = parent.transform;
+                Debug.Log("New enemy parent created");
+            }
         }
     }
+    private void InitializeSpawner()
+    {
+        spawnerTurnedOn = true; // start spawner
+        spawnTimer = 0f; //Reset timer
+
+        if (player == null)
+        {
+            // Find the player by tag, assuming your player has the tag "Player"
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                player = playerObj.transform;
+            }
+            else
+            {
+                Debug.LogError("Player GameObject not found in the scene! Spawner will not work.");
+            }
+        }
+    }
+
+
+    public void RegisterCountDisplay(TextMeshProUGUI newDisplay)
+    {
+        enemyCountText = newDisplay;
+
+        if (enemyCountText != null && enemyParent != null)
+        {
+            enemyCountText.text = $"Enemies: {enemyParent.childCount}"; 
+        } 
+        else
+        {
+            // Fallback for safety if enemyParent is somehow missing
+            enemyCountText.text = $"Enemies: 0";
+        }
+    }
+
     void Update()
     {
-        enemyCountText.text = $"Enemies: {enemyParent.childCount}";
+        //Check if UI exists before updating
+        if(enemyCountText != null && enemyParent != null)
+        {
+            enemyCountText.text = $"Enemies: {enemyParent.childCount}";
+        }
+        
+        
         if (GameClock.Instance == null)
         {
             Debug.LogError("GameClock instance not found, enemy spawn rate won't work");
