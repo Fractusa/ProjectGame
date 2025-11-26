@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -73,14 +74,14 @@ public class PlayerController : MonoBehaviour
     }
 
     public void AddAbility(AbilityData abilityToAdd)
-{
-    //Create a runtime instance so we don’t modify the project asset
-    AbilityData newAbility = Instantiate(abilityToAdd);
+    {
+        //Create a runtime instance so we don’t modify the project asset
+        AbilityData newAbility = Instantiate(abilityToAdd);
 
-    //Add to player’s runtime list
-    abilities.Add(newAbility);
+        //Add to player’s runtime list
+        abilities.Add(newAbility);
 
-    //Run setup so its effects initialize properly
-    newAbility.OnSetup(gameObject);
-}
+        //Run setup so its effects initialize properly
+        newAbility.OnSetup(gameObject);
+    }
 }
