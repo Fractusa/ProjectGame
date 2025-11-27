@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ProjectGameAPI.Data;
-using ProjectGameAPI.GraphQL; // whatever namespace Query/Mutation are in
+using ProjectGameAPI.GraphQL;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +14,7 @@ builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()
     .AddMutationType<Mutation>()
-    .RegisterDbContextFactory<AppDbContext>()   // <-- important for v15/16
+    .RegisterDbContextFactory<AppDbContext>()
     .AddFiltering()
     .AddSorting();
 

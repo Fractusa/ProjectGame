@@ -12,7 +12,6 @@ namespace ProjectGameAPI.Models
         public int PlayerId { get; set; }
         public int Score { get; set; }
         public DateTime AchievedAt { get; set; }
-
         public Player? Player { get; set; }
     }
 }
