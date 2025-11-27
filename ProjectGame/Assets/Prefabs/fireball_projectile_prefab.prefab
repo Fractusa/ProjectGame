@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.8, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -201609670, guid: 3961a506217b5394c80811ecb4dd5fb8, type: 3}
+  m_Sprite: {fileID: -341686479, guid: 50303107ad2c3ee4896517f0e25b0e08, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,7 +132,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.13, y: 0.08}
+    oldSize: {x: 0.75, y: 0.34375}
     newSize: {x: 0.13, y: 0.08}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -179,8 +179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6856d5fe366d8344b883b163195e244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  baseDamage: 10
-  projectileDestructionRange: 200
 --- !u!95 &6891181843548692298
 Animator:
   serializedVersion: 7
@@ -191,7 +189,7 @@ Animator:
   m_GameObject: {fileID: 6785065688402368468}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e027c7d1ff880a499c114dd51479174, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1a820bb8436cf2d4abf9ba91b619205e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

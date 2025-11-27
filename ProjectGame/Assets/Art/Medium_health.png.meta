@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3daaa59ea0fafe2428ccad90a01d3aa2
+guid: ba652078a750eb742b4a678cf6bcf236
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Acidball 1_1
+      name: Medium_health_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 9
-        width: 15
-        height: 11
+        x: 8
+        y: 7
+        width: 16
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,20 +112,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b7e17376b5fc65439acad1f31136f58
-      internalID: -581608011
+      spriteID: 55089925973e2544a8136419fe6b3b5e
+      internalID: -1809554699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Acidball 1_3
+      name: Medium_health_1
       rect:
         serializedVersion: 2
-        x: 45
-        y: 10
-        width: 14
-        height: 10
+        x: 40
+        y: 7
+        width: 16
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7175d0edaf9b1e4c93cd2b61ff981dc
-      internalID: 87206214
+      spriteID: ca72b7dc75876cd49932bb701b123943
+      internalID: 699730639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Acidball 1_5
+      name: Medium_health_2
       rect:
         serializedVersion: 2
-        x: 77
-        y: 10
-        width: 15
-        height: 11
+        x: 72
+        y: 7
+        width: 16
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 351c9b0c53c23764d89a8ba780d3a1dc
-      internalID: -1782183005
+      spriteID: d17314aa50139d746917e07b7b5a3a17
+      internalID: -1228437211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Acidball 1_7
+      name: Medium_health_3
       rect:
         serializedVersion: 2
-        x: 110
-        y: 11
-        width: 14
-        height: 10
+        x: 104
+        y: 7
+        width: 16
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,8 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01f3c77475df86641ad5d7381e4b147b
-      internalID: 764320083
+      spriteID: ca60da99600bbee48871fdc75421152c
+      internalID: 1489954039
       vertices: []
       indices: 
       edges: []
@@ -188,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 012ee42b6d74d9b418cefeee88ab3e8b
+    spriteID: 71646ca04331cdb4b8da314630e00033
     internalID: 0
     vertices: []
     indices: 
@@ -200,18 +200,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Acidball 1_0: 1167620608
-      Acidball 1_1: -581608011
-      Acidball 1_10: -1516941764
-      Acidball 1_11: 1603781045
-      Acidball 1_2: 1553227625
-      Acidball 1_3: 87206214
-      Acidball 1_4: -217485065
-      Acidball 1_5: -1782183005
-      Acidball 1_6: 486802113
-      Acidball 1_7: 764320083
-      Acidball 1_8: 434012584
-      Acidball 1_9: 1138803544
+      Medium_health_0: -1809554699
+      Medium_health_1: 699730639
+      Medium_health_2: -1228437211
+      Medium_health_3: 1489954039
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

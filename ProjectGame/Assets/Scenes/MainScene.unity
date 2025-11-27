@@ -192,7 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfadfdf43a821d4f8502a7c4b46dbf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameClock
-  timeText: {fileID: 220097723}
 --- !u!1 &103131538
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +334,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5658820540263630409, guid: 8ee0046007778a940beb780b1282601e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 549509504}
+      addedObject: {fileID: 549509508}
   m_SourcePrefab: {fileID: 100100000, guid: 8ee0046007778a940beb780b1282601e, type: 3}
 --- !u!1 &214837560
 GameObject:
@@ -775,12 +774,6 @@ RectTransform:
   m_SizeDelta: {x: 130, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &488670566
---- !u!1 &549509503 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5658820540263630409, guid: 8ee0046007778a940beb780b1282601e, type: 3}
-  m_PrefabInstance: {fileID: 173691149}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &549509504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -789,53 +782,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 488670564}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 488670567}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1415896707}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: PlayAgain
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_EditorClassIdentifier: 
 --- !u!114 &488670567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,13 +823,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488670564}
   m_CullTransparentMesh: 1
+--- !u!1 &549509503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5658820540263630409, guid: 8ee0046007778a940beb780b1282601e, type: 3}
+  m_PrefabInstance: {fileID: 173691149}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &549509508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549509503}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31bb1389ce0ff56429d12427e5db422c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AbilityAddTest
-  ability: {fileID: 11400000, guid: 8305ee110422dd64094cd510f00ff2cd, type: 2}
+  ability: {fileID: 0}
 --- !u!1 &587224887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2879,10 +2839,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5722999031476036509, guid: 604b552ac6d0f8d42a54d1378a0660dd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722999031476036509, guid: 604b552ac6d0f8d42a54d1378a0660dd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.65625
+      objectReference: {fileID: 0}
     - target: {fileID: 5998754975683185711, guid: 604b552ac6d0f8d42a54d1378a0660dd, type: 3}
       propertyPath: m_Name
       value: Health_Collectible
       objectReference: {fileID: 0}
+    - target: {fileID: 6588697058214341414, guid: 604b552ac6d0f8d42a54d1378a0660dd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1809554699, guid: ba652078a750eb742b4a678cf6bcf236, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3072,6 +3044,18 @@ PrefabInstance:
     - target: {fileID: 5658820540263630409, guid: 8ee0046007778a940beb780b1282601e, type: 3}
       propertyPath: m_Name
       value: Exp_Collectible
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905825031868319162, guid: 8ee0046007778a940beb780b1282601e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1567775599, guid: e82ec96ed1917294d949346fc9fcc5af, type: 3}
+    - target: {fileID: 6956250942448526878, guid: 8ee0046007778a940beb780b1282601e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.78125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956250942448526878, guid: 8ee0046007778a940beb780b1282601e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.78125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
