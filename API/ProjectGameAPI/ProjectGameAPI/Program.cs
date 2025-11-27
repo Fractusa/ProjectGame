@@ -7,8 +7,7 @@ using ProjectGameAPI.GraphQL; // whatever namespace Query/Mutation are in
 var builder = WebApplication.CreateBuilder(args);
 
 // EF Core: SQLite example
-builder.Services.AddDbContextFactory<AppDbContext>(options =>
-    options.UseSqlite("Data Source=game.db"));
+builder.Services.AddDbContextFactory<AppDbContext>(options => options.UseSqlite("Data Source=game.db"));
 
 // GraphQL
 builder.Services

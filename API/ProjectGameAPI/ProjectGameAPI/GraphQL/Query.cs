@@ -2,6 +2,7 @@
 using ProjectGameAPI.Models;
 using HotChocolate;
 using HotChocolate.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProjectGameAPI.GraphQL
 {
@@ -18,7 +19,7 @@ namespace ProjectGameAPI.GraphQL
         //Get highscores
         [UseFiltering]
         [UseSorting]
-        public IQueryable<HighScore> GetHighScores(AppDbContext context) => context.HighScores;
+        public IQueryable<HighScore> GetHighScores(AppDbContext context) => context.HighScores.Include(p => p.Player);
 
         public string Hello() => "World";
     }

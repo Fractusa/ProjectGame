@@ -10731,15 +10731,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467983377509906497, guid: 8ee0046007778a940beb780b1282601e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2467983377509906497, guid: 8ee0046007778a940beb780b1282601e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2467983377509906497, guid: 8ee0046007778a940beb780b1282601e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2467983377509906497, guid: 8ee0046007778a940beb780b1282601e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11901,6 +11901,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2680088246115429, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
+      propertyPath: healthSpawnChance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6146604719432127, guid: 96e45fc987eea59489775be2f566b04d, type: 3}
       propertyPath: healthPrefab
       value: 

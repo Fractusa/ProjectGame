@@ -4,6 +4,7 @@ using System;
 namespace GraphQLModels
 {
     //Player class as returned from the backend, field names matching the GraphQL JSON fields.
+    [Serializable]
     public class PlayerDTO
     {
         public int id;
@@ -14,6 +15,7 @@ namespace GraphQLModels
 
     //HighScore class as returned from the backend, field names matching the GraphQL JSON fields.
     //Includes the scores and the Player who achieved it nested (PlayerDTO player)
+    [Serializable]
     public class HighScoreDTO
     {
         public int id;
@@ -25,6 +27,7 @@ namespace GraphQLModels
 
     //Wrapper for GraphQL responses, as GraphQL always returns a JSON file wrapped with { "data": { ... }}
     //Where T is the specific response type specified in below classes.
+    [Serializable]
     public class GraphQLResponse<T>
     {
         public T data;
@@ -43,12 +46,14 @@ namespace GraphQLModels
     // }
 
     //Object under "createPlayer" in the mutation
+    [Serializable]
     public class CreatePlayerData
     {
         public CreatePlayerResult createPlayer;
     }
 
     //Object under "player" in the mutation
+    [Serializable]
     public class CreatePlayerResult
     {
         public PlayerDTO player;
@@ -65,12 +70,13 @@ namespace GraphQLModels
     //     }
     //   }
     // }
-
+    [Serializable]
     public class SubmitScoreData
     {
         public SubmitScoreResult submitScore;
     }
-
+    
+    [Serializable]
     public class SubmitScoreResult
     {
         public HighScoreDTO highScore;
@@ -85,6 +91,7 @@ namespace GraphQLModels
     //     "highScores": [ { ... }, { ... } ]
     //   }
     // }
+    [Serializable]
     public class HighScoresData
     {
         public HighScoreDTO[] highScores;

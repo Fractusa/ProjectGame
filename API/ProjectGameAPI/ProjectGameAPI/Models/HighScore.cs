@@ -13,6 +13,6 @@ namespace ProjectGameAPI.Models
         public int Score { get; set; }
         public DateTime AchievedAt { get; set; }
 
-        public Player Player { get; set; } = default!;
+        public Player? Player { get; set; }
     }
 }

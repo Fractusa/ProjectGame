@@ -22,8 +22,7 @@ namespace ProjectGameAPI.GraphQL
     {
         //Mutation for creating a player, takes the input sent from Unity (input.Username) and applies default values (Level and Experience).
         //This enables the ability to create a save, albeit this is likely not to be used.
-        public async Task<CreatePlayerPayload> CreatePlayerAsync(
-            CreatePlayerInput input, AppDbContext context)
+        public async Task<CreatePlayerPayload> CreatePlayerAsync(CreatePlayerInput input, AppDbContext context)
         {
             //Creates the player using the input and default values.
             var player = new Player
@@ -41,8 +40,7 @@ namespace ProjectGameAPI.GraphQL
         }
 
         //Mutation for submitting a highscore, takes PlayerId as input along with score value. 
-        public async Task<SubmitScorePayload> SubmitScoreAsync(
-            SubmitScoreInput input, AppDbContext context)
+        public async Task<SubmitScorePayload> SubmitScoreAsync(SubmitScoreInput input, AppDbContext context)
         {
             //Finds the player attempting to submit a highscore.
             var player = await context.Players.FindAsync(input.PlayerId);

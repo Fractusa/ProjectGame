@@ -67,7 +67,7 @@ public class GraphQLClient : MonoBehaviour
     {
         string query = @"
             query {
-              highScores(order: { score: DESC }, take: 10) {
+              highScores {
                 id
                 playerId
                 score
